@@ -1,0 +1,100 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-header mb-sm-5">
+  <div class="container">
+    <%- if devise_mapping.registerable? && controller_name != 'registrations'  && controller_name != 'passwords' %>
+      <div class="d-flex align-items-center text-white">
+        Need an account? <%= link_to "Sign up", join_path, class: 'btn btn-primary ml-2' %><br /><br />
+      </div>
+    <% end %>
+  </div>
+</nav>
+
+<div class="log-in-container p-3 p-sm-0">
+  <div class="bp-card m-auto text-center" style="max-width:500px">
+    <div class="h2 mb-3">Log In to Bullpen</div>
+    <div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= render 'devise/shared/error_messages' %>
+        <div class="field mb-3 text-left">
+          <%= f.label 'Email Address', class: 'h5' %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "Email address", id: "user_email"%>
+        </div>
+
+        <div class="field mb-2 text-left">
+          <%= f.label :password, class: 'h5' %><br />
+          <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: "Password", id: "user_password" %>
+        </div>
+
+        <div class="field mb-3">
+          <%= link_to "Forgot your password?", new_password_path(resource_name), class: "text-center" %><br />
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Log In", class: "btn btn-primary btn-block" %>
+        </div>
+      <% end %>
+      
+      <div class="bp-or-border my-3"><span>or</span></div>
+      
+      <%= google_sign_in_button(image_pack_tag('media/images/icons8-google-48.png', size: '24x24', class: 'mr-2') + 'Log In with Gmail', proceed_to: user_google_omniauth_callback_path(src: 'sessions#new'), class: "btn btn-outline-primary btn-block d-flex justify-content-center mb-3") %>
+
+    </div>
+    <div class="text-muted">
+      For help contact us at <%= mail_to('support@bullpenre.com') %>
+    </div>
+  </div>
+</div>
+
+<script>
+    $(function() {
+        if (getCookie("email") && getCookie("email").length > 0) {
+            $('#user_email').val(getCookie("email"));
+            $('#user_password').trigger('focus');
+            deleteCookie("email");
+        } else if(getPassedEmailParam()) {
+          $('#user_email').val(getPassedEmailParam());
+          $('#user_password').trigger('focus');
+        }
+    });
+  function setCookie(name, value, options = {}) {
+
+      options = {
+          path: '/'
+      };
+
+      if (options.expires instanceof Date) {
+          options.expires = options.expires.toUTCString();
+      }
+
+      let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+      for (let optionKey in options) {
+          updatedCookie += "; " + optionKey;
+          let optionValue = options[optionKey];
+          if (optionValue !== true) {
+              updatedCookie += "=" + optionValue;
+          }
+      }
+
+      document.cookie = updatedCookie;
+  }
+
+  function getCookie(name) {
+      let matches = document.cookie.match(new RegExp(
+          "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+      ));
+      return matches ? decodeURIComponent(matches[1]) : undefined;
+  };
+
+  function deleteCookie(name) {
+      setCookie(name, "", {
+          'max-age': -1
+      })
+  };
+
+  function getPassedEmailParam() {
+    const obj = new URL(location.href);
+    return(obj.searchParams.get('email'));
+  }
+
+    mixpanelTrack('Show Sign Page');
+</script>

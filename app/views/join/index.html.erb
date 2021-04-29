@@ -1,0 +1,32 @@
+<div class="log-in-container p-3 p-sm-0">
+  <div class="card m-auto text-center" style="max-width:500px">
+    <div class="h2 mb-3">Sign Up for Use Resume</div>
+    <div>
+      <%= form_for(:user, url: join_signup_path) do |f| %>
+        <div class="field mb-3 text-left">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "Email address", id: "user_email"%>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign Up with Email", class: "btn btn-primary btn-block", id: "clickSignUpWithEmail" %>
+        </div>
+      <% end %>
+
+      <div class="border my-3"><span>or</span></div>
+
+
+
+    </div>
+    <div class="text-muted">
+      For help contact us at <%= mail_to('admin@support.com') %>
+    </div>
+  </div>
+</div>
+
+<% if @email %>
+  <script>
+      $(function() {
+          $('#user_email').val('<%= @email %>');
+      });
+  </script>
+<% end %>
