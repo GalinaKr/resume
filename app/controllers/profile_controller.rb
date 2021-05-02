@@ -10,6 +10,6 @@ class ProfileController < ApplicationController
   private
 
   def profile
-    @profile ||= current_user.freelancer_profile
+    @profile ||= current_user.profile
   end
 end

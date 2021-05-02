@@ -1,9 +1,11 @@
 class ProfileStepsController < ApplicationController
   include Wicked::Wizard
   steps :personal_info, :family
-  before_action :set_user
+  before_action :set_user, :set_profile
 
   def show
+    @user.reload unless @user.profile.present?
+    #populate_available_options_for_data
 
     render_wizard
   end
@@ -13,10 +15,9 @@ class ProfileStepsController < ApplicationController
   end
 
   def personal_info_save
-    byebug
+    #byebug
     return false unless wizard_value(step) == :personal_info
 
-    User.new(user_params)
     render_wizard @user
 
     true
@@ -34,6 +35,11 @@ class ProfileStepsController < ApplicationController
 
   def set_user
     @user ||= current_user
+  end
+
+  def set_profile
+    byebug
+    @profile = @user.profile || Profile.create(user_id: @user.id)
   end
 
 end

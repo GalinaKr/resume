@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :users
   resources :profiles
 
-  resources :profiles_steps
+  resources :profile_steps
 
   root 'join#index'
 end

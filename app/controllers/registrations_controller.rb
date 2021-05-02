@@ -5,7 +5,6 @@ class RegistrationsController < Devise::RegistrationsController
   before_action :check_signed_in
 
   def new
-    byebug
     return redirect_to root_path unless session[:email].present?
 
     @email = session[:email]
@@ -38,7 +37,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_in_path_for(_resource)
-    employer? ? employer_profile_steps_path(current_user) : freelancer_profile_steps_path(current_user)
+    profile_steps_path(current_user)
   end
 
   def after_sign_up_path_for(_resource)
@@ -58,12 +57,12 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name email phone_number role])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name second_name last_name email phone_number])
   end
 
   private
 
   def google_signup_params
-    params.require(:user).permit(:first_name, :last_name, :phone_number, :role, :signup_promo_id)
+    params.require(:user).permit(:first_name, :last_name, :phone_number)
   end
 end
