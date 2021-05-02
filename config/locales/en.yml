@@ -30,8 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  profile: "Profile"
-  personal_information: "Personal information"
+  profile: Profile
+  personal_information: Personal information
+  info_about_family: Family
   user_first_name: Name
   user_second_name: Second Name
   user_last_name: Last Name

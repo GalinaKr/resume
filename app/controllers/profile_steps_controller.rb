@@ -38,7 +38,6 @@ class ProfileStepsController < ApplicationController
   end
 
   def set_profile
-    byebug
     @profile = @user.profile || Profile.create(user_id: @user.id)
   end
 
