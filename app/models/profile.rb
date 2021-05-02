@@ -3,6 +3,12 @@ class Profile < ApplicationRecord
 
   default_scope { order(created_at: :desc) }
   scope :users, -> { joins(:user) }
+  has_one_attached :avatar
+
+  MAX_FILE_SIZE = 2_097_152
+  ACCEPTABLE_CONTENT_TYPE = %w[image/jpg image/jpeg image/png image/gif].freeze
+
+  validate :correct_content_type?, :correct_size?
 
   def first_name
     @first_name ||= user.first_name
@@ -22,5 +28,36 @@ class Profile < ApplicationRecord
 
   def editable?(user)
     user_id == user&.id
+  end
+
+  private
+
+  def correct_content_type?
+    return true if attachment_valid_content_type?(avatar)
+
+    errors.add(:base, 'Selected wrong file type!')
+    false
+  end
+
+  def correct_size?
+    return true if attachment_valid_correct_size?(avatar)
+
+    errors.add(:base, 'File size exceeded 2MB')
+    false
+  end
+
+  def attachment_valid_content_type?(attachment)
+    return true unless attachment.attached?
+    return true if ACCEPTABLE_CONTENT_TYPE.include?(attachment.blob.content_type)
+    return true if attachment.blob.content_type.blank?
+
+    false
+  end
+
+  def attachment_valid_correct_size?(attachment)
+    return true unless attachment.attached?
+    return true if attachment.blob.byte_size < MAX_FILE_SIZE
+
+    false
   end
 end

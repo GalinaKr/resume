@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :users
   resources :profiles
 
+  resources :avatar, only: %i[update destroy]
   resources :profile_steps
 
   root 'join#index'

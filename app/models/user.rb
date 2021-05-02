@@ -14,4 +14,10 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def avatar
+    return nil unless profile&.avatar&.attached?
+
+    profile&.avatar
+  end
 end

@@ -29,6 +29,8 @@ gem 'wicked', '~> 1.3', '>= 1.3.2'          # Wicked is a Rails engine for produ
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'letter_opener'                                   # Allows for seeing sent emails in dev environment
+  gem 'letter_opener_web'                               # GUI for letter_opener
 end
 
 group :development do
