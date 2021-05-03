@@ -17,6 +17,3 @@ document.addEventListener("turbolinks:load", () => {
     $('[data-toggle="tooltip"]').tooltip()
     $('[data-toggle="popover"]').popover()
 })
-
-import 'images/icons8-search-659.png';
-import 'images/bg-user-img.png';
