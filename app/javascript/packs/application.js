@@ -11,7 +11,6 @@ require("@rails/activestorage").start()
 require("channels")
 require("bootstrap")
 
-import 'src/stylesheets/application'
 const images = require.context('../images', true)
 
 import $ from "jquery"
