@@ -10,10 +10,6 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("bootstrap")
-require("typeface-ubuntu")
-require("trix")
-require("@rails/actiontext")
-require("packs/time_zone")
 
 import 'src/stylesheets/application'
 const images = require.context('../images', true)
