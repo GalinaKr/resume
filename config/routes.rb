@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get '/join', to: 'start#index'
-  post '/join/signup', to: 'start#signup'
+  get '/join', to: 'join#index'
+  post '/join/signup', to: 'join#signup'
 
   devise_for :users, controllers: {
     passwords: 'passwords',
