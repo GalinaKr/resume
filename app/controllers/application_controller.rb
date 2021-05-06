@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   #before_action :store_location
 
   def after_sign_in_path_for(resource)
-    determine_correct_path(resource)
+    #determine_correct_path(resource)
   end
 
   def after_sign_out_path_for(_resource_or_scope)
@@ -22,13 +22,5 @@ class ApplicationController < ActionController::Base
     return profile_steps_path if user.profile.current_step.blank?
 
     profile_steps_path(id: user.profile.current_step)
-  end
-
-  def profile_pending?(user)
-    user.profile.draft == false && user.profile.pending?
-  end
-
-  def profile_declined?(user)
-    user.profile.declined?
   end
 end
