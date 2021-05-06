@@ -4,7 +4,6 @@
 // that code so it'll be compiled.
 
 require("jquery")
-require("@fortawesome/fontawesome-free/js/all")
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
@@ -15,7 +14,6 @@ require("select2")
 require("typeface-nunito-sans")
 require("typeface-ubuntu")
 require("trix")
-require("@rails/actiontext")
 
 import 'src/stylesheets/application'
 const images = require.context('../images', true)
