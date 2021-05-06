@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class AvatarController < ApplicationController
-  before_action :non_freelancer_redirect
-
   def update
     return unless valid_input_file?
 
