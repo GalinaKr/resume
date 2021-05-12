@@ -30,9 +30,25 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  hello: Sign Up for Resume
   profile: Profile
   personal_information: Personal information
   info_about_family: Family
-  user_first_name: Name
+  user_first_name: First Name
   user_second_name: Second Name
   user_last_name: Last Name
+  phone_number: Phone Number
+  email: Email
+  upload_photo: Upload photo
+  delete: Delete
+  next: Next
+  back: Back
+  sign_up_with_email: Sign Up with Email
+  sign_up_with_gemail: Sign Up with Gmail
+  create_password: Create a Password
+  change_last_name: Change Last Name, First Name, Second Name
+  date_of_change_name: Date of change
+  reason_of_change_name: Reason for change
+  degree_of_kinship: Degree of Kinship
+  place_of_work: Place of Study or Work
+  birthday: Date of Birth

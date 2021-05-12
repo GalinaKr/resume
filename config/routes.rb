@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  resources :families
   resources :profiles
 
   resources :avatar, only: %i[update destroy]

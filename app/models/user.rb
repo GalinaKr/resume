@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_one :profile, dependent: :destroy
+  has_many :family, dependent: :destroy
 
   def full_name
     "#{first_name} #{last_name}"

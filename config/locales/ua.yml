@@ -1,7 +1,21 @@
 ua:
+  hello: Для продовження роботи з застосунком - зареєструйтеся
   profile: Профіль
   personal_information: Особиста інформація
   info_about_family: Родина
   user_first_name: Им'я
   user_second_name: Побатькові
   user_last_name: Прізвище
+  phone_number: Номер телефону
+  email: Адреса електронної пошти
+  upload_photo: Завантажити фотографію
+  delete: Видалити
+  next: Наступний крок
+  sign_up_with_email: Використати email
+  sign_up_with_gemail: Реєстрація з Gmail
+  change_last_name: Зміна Прізвища, імені, по-батькові
+  date_of_change_name: Дата зміни Прізвища, імені, по-батькові
+  reason_of_change_name: Причина
+  degree_of_kinship: Ступінь споріднення
+  place_of_work: Місце навчання або роботи
+  birthday: Дата народження
