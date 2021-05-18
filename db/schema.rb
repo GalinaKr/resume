@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_13_173930) do
+ActiveRecord::Schema.define(version: 2021_05_18_075712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,15 @@ ActiveRecord::Schema.define(version: 2021_05_13_173930) do
     t.bigint "profile_id"
     t.index ["profile_id"], name: "index_families_on_profile_id"
     t.index ["user_id"], name: "index_families_on_user_id"
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string "lang_know"
+    t.string "know_level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "profile_id"
+    t.index ["profile_id"], name: "index_languages_on_profile_id"
   end
 
   create_table "profile_certifications", force: :cascade do |t|
@@ -158,6 +167,7 @@ ActiveRecord::Schema.define(version: 2021_05_13_173930) do
   add_foreign_key "changes_in_names", "users"
   add_foreign_key "families", "profiles"
   add_foreign_key "families", "users"
+  add_foreign_key "languages", "profiles"
   add_foreign_key "profile_educations", "profiles"
   add_foreign_key "profiles", "users"
 end

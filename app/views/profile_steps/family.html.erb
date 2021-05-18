@@ -12,60 +12,37 @@
   <div class="bp-card mb-5 mx-auto" style="max-width:800px">
     <div class="card-title text-center">
       <div class="h2">
-        <%= form_for :family, url: wizard_path, method: :put do |f| %>
           <div class="text-center">
             <h2><%= I18n.t :info_about_family %></h2>
           </div>
-
-          <div class="form-group mb-4">
-            <div class="row">
-              <div class="col">
-                <%= f.label I18n.t :user_first_name, class: 'form-label' %>
-                <%= f.text_field :f_first_name, class: 'form-control' %>
-              </div>
-              <div class="col">
-                <%= f.label I18n.t :user_second_name, class: 'form-label' %>
-                <%= f.text_field :f_second_name, class: 'form-control' %>
-              </div>
-              <div class="col">
-                <%= f.label I18n.t :user_last_name, class: 'form-label' %>
-                <%= f.text_field :f_last_name, class: 'form-control' %>
-              </div>
-            </div>
-
-            <div class="row">
-              <%= f.label I18n.t :degree_of_kinship, class: 'form-label' %>
-              <%= f.text_field :degree_of_kinship, class: 'form-control' %>
-            </div>
-
-            <div class="row">
-              <div class="col">
-                <%= f.label I18n.t :birthday, class: 'form-label' %>
-                <%= f.text_field :f_birthday, class: 'form-control', :data => { :provide => :datepicker } %>
-              </div>
-            </div>
-
-            <div class="row">
-              <%= f.label I18n.t :place_of_work, class: 'form-label' %>
-              <%= f.text_field :place_of_work, class: 'form-control' %>
-            </div>
-
-            <!--Add another part of family -->
-
-            <div class="row">
-              <div class="col-md">
-                <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addFamilyModal"><i class="fas fa-plus mr-2"></i>Add New</button>
-                <%= render 'add_family'%>
-              </div>
-            </div>
+          <div class="mb-4">
+            <% if @profile.families.present? %>
+              <% @profile.families.order(f_birthday: :desc).each do |family| %>
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <div class="w-100">
+                    <div class="row">
+                      <div class="col mb-1 text text-wrap text-break"><%= family.degree_of_kinship %></div>
+                    </div>
+                    <div class="row bp-text-sm">
+                      <div class="col-md text-wrap text-break"><%= family.full_name %>,<%= family.f_birthday %>, <%= family.place_of_work %></div>
+                    </div>
+                  </div>
+                  <%= render 'edit_family', { family: family, profile: @profile } %>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editFamilyModal-<%= family.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
+                </div>
+              <% end %>
+            <% end %>
+            <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addFamilyModal"><i class="fas fa-plus mr-2"></i>Add Part of Family</button>
+          </div>
 
           </div>
           <div class="d-flex justify-content-between">
             <%= link_to I18n.t(:back), previous_wizard_path, class: "btn btn-link px-0" %>
-            <%= link_to 'Next', next_wizard_path, class: "btn btn-primary", id: "NextBtn" %>
+            <%= link_to I18n.t(:next), next_wizard_path, class: "btn btn-primary", id: "NextBtn" %>
           </div>
-        <% end %>
       </div>
     </div>
   </div>
 </div>
+
+<%= render 'add_family'%>

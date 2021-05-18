@@ -22,6 +22,21 @@ module WorkEducationExperience
     end
   end
 
+  def language_save
+    return unless params[:language].present?
+
+    if language.present? && params[:commit] == 'Delete'
+      language.destroy
+    elsif language.present?
+      unless language.update(language_params)
+        flash.now[:alert] = language.errors.full_messages.join(', ')
+      end
+    else
+      object = Language.create(language_params)
+      flash.now[:alert] = object.errors.full_messages.join(', ') unless object.errors.count.zero?
+    end
+  end
+
   private
 
   def education_options
@@ -43,6 +58,10 @@ module WorkEducationExperience
   def profile_education_params
     params.require(:profile_education)
           .permit(:id, :institution, :degree, :course_of_study, :graduation_year, :currently_studying, :description)
+  end
+
+  def language_params
+    params.require(:language).permit(:id, :lang_know, :know_level)
   end
 
   def checked_profile_education_params
@@ -81,5 +100,9 @@ module WorkEducationExperience
   def education_profile_experience
     @education_profile_experience ||=
       @profile&.profile_educations&.find_by(id: params[:profile_education][:id])
+  end
+
+  def language_profile
+    @language ||= @profile&.languages&.find_by(id: params[:languages][:id])
   end
 end

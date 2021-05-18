@@ -3,6 +3,8 @@
 class ProfileController < ApplicationController
   before_action :authenticate_user!, :initial_check, :profile
   include AddFamily
+  include WorkEducationExperience
+  include WorkCertification
 
   def show
     certifications

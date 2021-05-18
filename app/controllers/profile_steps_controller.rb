@@ -38,7 +38,7 @@ class ProfileStepsController < ApplicationController
 
     add_family
 
-    render_wizard @user
+    render wizard_path(:family)
 
     true
   end
@@ -49,6 +49,7 @@ class ProfileStepsController < ApplicationController
     profile_education_save
     work_experience_save
     certification_save
+    language_save
 
     render wizard_path(:work_education_experience)
 

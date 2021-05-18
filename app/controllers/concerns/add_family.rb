@@ -20,6 +20,7 @@ module AddFamily
   end
 
   def family_params
+    byebug
     params.require(:family)
           .permit(:id, :f_first_name, :f_second_name, :f_last_name, :f_birthday, :degree_of_kinship, :place_of_work)
   end

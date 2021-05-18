@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Profile < ApplicationRecord
   belongs_to :user
 
@@ -8,6 +10,7 @@ class Profile < ApplicationRecord
   has_many :profile_experiences, dependent: :destroy
   has_many :profile_educations, dependent: :destroy
   has_many :profile_certifications, dependent: :destroy
+  has_many :languages, dependent: :destroy
 
   MAX_FILE_SIZE = 2_097_152
   ACCEPTABLE_CONTENT_TYPE = %w[image/jpg image/jpeg image/png image/gif].freeze

@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :family, dependent: :destroy
 
   def full_name
-    "#{first_name} #{last_name}"
+    "#{first_name} #{second_name} #{last_name}"
   end
 
   def avatar
