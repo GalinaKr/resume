@@ -61,7 +61,7 @@ module WorkEducationExperience
   end
 
   def language_params
-    params.require(:language).permit(:id, :lang_know, :know_level)
+    params.require(:language).permit(:id, :lang_know, :know_level).merge(profile_id: @profile.id)
   end
 
   def checked_profile_education_params

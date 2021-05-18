@@ -10,10 +10,7 @@
       </div>
       <%= form_for :family, url: wizard_path, method: :put do |f| %>
         <div class="modal-body pt-0">
-          <div class="form-group">
-            <label for="editInstitutionInput" class="h5">Institution</label>
-            <%= f.text_field :institution, class: "form-control", id: "editInstitutionInput", placeholder: "Enter the school you attended", value: profile_education.institution %>
-          </div>
+
         <div class="modal-footer">
           <%= f.submit 'Delete', class: "btn btn-outline-danger mr-2 d-none" %>
           <%= f.submit 'Save Changes', class: 'btn btn-primary' %>
