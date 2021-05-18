@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_11_171829) do
+ActiveRecord::Schema.define(version: 2021_05_13_173930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,14 @@ ActiveRecord::Schema.define(version: 2021_05_11_171829) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "certifications", force: :cascade do |t|
+    t.string "description"
+    t.boolean "disable", default: false
+    t.boolean "custom", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "changes_in_names", force: :cascade do |t|
     t.string "first_name"
     t.string "second_name"
@@ -66,7 +74,47 @@ ActiveRecord::Schema.define(version: 2021_05_11_171829) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
+    t.bigint "profile_id"
+    t.index ["profile_id"], name: "index_families_on_profile_id"
     t.index ["user_id"], name: "index_families_on_user_id"
+  end
+
+  create_table "profile_certifications", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "certification_id", null: false
+    t.string "description"
+    t.date "earned"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["certification_id"], name: "index_profile_certifications_on_certification_id"
+    t.index ["profile_id"], name: "index_profile_certifications_on_profile_id"
+  end
+
+  create_table "profile_educations", force: :cascade do |t|
+    t.string "institution"
+    t.integer "degree"
+    t.string "course_of_study"
+    t.integer "graduation_year"
+    t.boolean "currently_studying", default: false
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "profile_id"
+    t.index ["profile_id"], name: "index_profile_educations_on_profile_id"
+  end
+
+  create_table "profile_experiences", force: :cascade do |t|
+    t.string "job_title"
+    t.string "company"
+    t.string "location"
+    t.date "start_date"
+    t.date "end_date"
+    t.boolean "current_job", default: false
+    t.text "description"
+    t.bigint "profile_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_profile_experiences_on_profile_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -74,6 +122,7 @@ ActiveRecord::Schema.define(version: 2021_05_11_171829) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
+    t.string "current_step"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -98,6 +147,8 @@ ActiveRecord::Schema.define(version: 2021_05_11_171829) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "personal_tax_number"
+    t.date "birthday"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -105,6 +156,8 @@ ActiveRecord::Schema.define(version: 2021_05_11_171829) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "changes_in_names", "users"
+  add_foreign_key "families", "profiles"
   add_foreign_key "families", "users"
+  add_foreign_key "profile_educations", "profiles"
   add_foreign_key "profiles", "users"
 end

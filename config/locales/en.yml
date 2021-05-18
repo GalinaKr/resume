@@ -39,6 +39,8 @@ en:
   user_last_name: Last Name
   phone_number: Phone Number
   email: Email
+  location: Location
+  personal_number: Personal tax number
   upload_photo: Upload photo
   delete: Delete
   next: Next

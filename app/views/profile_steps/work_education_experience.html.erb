@@ -1,0 +1,107 @@
+<%= render '/nav_bar/profile_flow_nav_bar' %>
+<div class="container pr-0 pl-0" style="max-width: 720px;"><%= render partial: 'shared/notice_and_alert' %></div>
+
+<!--Progress Meter, Step 4-->
+<div class="container mb-4">
+  <div class="progress bg-white shadow-sm mx-auto" style="max-width: 700px;">
+    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="text-secondary font-weight-bold my-1 text-center">60%</div>
+</div>
+
+<!--Content Card, Step 4-->
+<div class="container">
+  <div class="bp-card mb-5 mx-auto" style="max-width: 700px;">
+    <div class="text-center">
+      <h2>Work experience and education</h2>
+      <p class="mb-4">Tell us about your work experience and educational background.</p>
+    </div>
+
+    <div class="mb-4">
+      <div class="h5">
+        Work Experience
+      </div>
+      <% if @profile.profile_experiences.present? %>
+        <% @profile.profile_experiences.order(current_job: :desc, end_date: :desc).each do |work_exp| %>
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="w-100">
+              <div class="row">
+                <div class="col mb-1 text text-wrap text-break"><%= work_exp.job_title %></div>
+              </div>
+              <div class="row bp-text-sm">
+                <div class="col-md text-wrap text-break"><%= work_exp.company %>, <%= work_exp.location %></div>
+                <div class="col-md">
+                  <%= work_exp.start_date&.strftime("%b %Y") %>-<%= work_exp.current_job.present? ? "Present" : work_exp.end_date&.strftime("%b %Y") %>
+                </div>
+              </div>
+            </div>
+            <%= render 'edit_work_experience', { profile_experience: work_exp, profile: @profile } %>
+            <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editWorkExperienceModal-<%= work_exp.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
+          </div>
+        <% end %>
+      <% end %>
+      <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addWorkExperienceModal"><i class="fas fa-plus mr-2"></i>Add Experience</button>
+    </div>
+    <div class="mb-4">
+      <div class="h5">
+        Education
+      </div>
+      <% if @profile.profile_educations.present? %>
+        <% @profile.profile_educations.order(currently_studying: :desc, graduation_year: :desc).each do |education_exp| %>
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="w-100">
+              <div class="row">
+                <div class="col mb-1 text text-wrap text-break"><%= education_exp.institution %></div>
+              </div>
+              <div class="row bp-text-sm">
+                <div class="col-md text-wrap text-break"><%= education_exp.degree %>, <%= education_exp.course_of_study %></div>
+                <div class="col-md"><%= education_exp.currently_studying.present? ? "Currently Studying" : education_exp.graduation_year %></div>
+              </div>
+            </div>
+            <%= render 'edit_education', profile_education: education_exp %>
+            <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editEducationModal-<%= education_exp.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
+          </div>
+        <% end %>
+      <% end %>
+      <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addEducationModal"><i class="fas fa-plus mr-2"></i>Add Education</button>
+    </div>
+
+    <div class="mb-5">
+      <div class="h5">
+        Work Licenses & Certifications
+      </div>
+      <% if @profile.profile_certifications.present? %>
+        <% @profile.profile_certifications.order(earned: :desc).each do |certification| %>
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="w-100">
+              <div class="row">
+                <div class="col-md text text-wrap text-break"><%= certification&.description %></div>
+                <div class="col-md"> Earned <%= certification&.earned&.strftime("%b %Y") %></div>
+              </div>
+            </div>
+            <%= render 'edit_licences_or_certification', certification: certification %>
+            <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editLicenseCertificationModall-<%= certification.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
+          </div>
+        <% end %>
+      <% end %>
+      <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addLicenseCertificationModal"><i class="fas fa-plus mr-2"></i>Add New</button>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <%= link_to 'Back', previous_wizard_path, class: "btn btn-link px-0" %>
+      <%= link_to 'Next', next_wizard_path, class: "btn btn-primary", id: "NextBtn" %>
+    </div>
+  </div>
+</div>
+
+<script>
+    $('#NextBtn').click(function(event){
+      if (<%= @profile.profile_educations.blank? || @profile.profile_experiences.blank? %>) {
+        event.preventDefault();
+      }
+    });
+</script>
+
+<%= render 'add_work_experience', { timestamp: Time.current.to_i, profile: @profile } %>
+<%= render 'add_education' %>
+<%= render 'add_licences_or_certification', certification: @certification %>

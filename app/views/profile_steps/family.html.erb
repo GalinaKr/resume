@@ -19,11 +19,6 @@
 
           <div class="form-group mb-4">
             <div class="row">
-              <%= f.label I18n.t :degree_of_kinship, class: 'form-label' %>
-              <%= f.text_field :degree_of_kinship, class: 'form-control' %>
-            </div>
-
-            <div class="row">
               <div class="col">
                 <%= f.label I18n.t :user_first_name, class: 'form-label' %>
                 <%= f.text_field :f_first_name, class: 'form-control' %>
@@ -36,6 +31,11 @@
                 <%= f.label I18n.t :user_last_name, class: 'form-label' %>
                 <%= f.text_field :f_last_name, class: 'form-control' %>
               </div>
+            </div>
+
+            <div class="row">
+              <%= f.label I18n.t :degree_of_kinship, class: 'form-label' %>
+              <%= f.text_field :degree_of_kinship, class: 'form-control' %>
             </div>
 
             <div class="row">
@@ -54,14 +54,15 @@
 
             <div class="row">
               <div class="col-md">
-              <button type="button" class="btn btn-outline-primary">Add another</button>
+                <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addFamilyModal"><i class="fas fa-plus mr-2"></i>Add New</button>
+                <%= render 'add_family'%>
               </div>
             </div>
 
           </div>
           <div class="d-flex justify-content-between">
             <%= link_to I18n.t(:back), previous_wizard_path, class: "btn btn-link px-0" %>
-            <%= f.submit I18n.t(:next), class: 'btn btn-primary' %>
+            <%= link_to 'Next', next_wizard_path, class: "btn btn-primary", id: "NextBtn" %>
           </div>
         <% end %>
       </div>

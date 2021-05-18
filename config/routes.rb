@@ -14,9 +14,13 @@ Rails.application.routes.draw do
     get '/sign_up', to: 'registrations#sign_up'
   end
 
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
   resources :users
   resources :families
   resources :profiles
+
+  post 'add_family', to: 'profile#change_family'
 
   resources :avatar, only: %i[update destroy]
   resources :profile_steps

@@ -4,6 +4,10 @@ class Profile < ApplicationRecord
   default_scope { order(created_at: :desc) }
   scope :users, -> { joins(:user) }
   has_one_attached :avatar
+  has_many :families, dependent: :destroy
+  has_many :profile_experiences, dependent: :destroy
+  has_many :profile_educations, dependent: :destroy
+  has_many :profile_certifications, dependent: :destroy
 
   MAX_FILE_SIZE = 2_097_152
   ACCEPTABLE_CONTENT_TYPE = %w[image/jpg image/jpeg image/png image/gif].freeze

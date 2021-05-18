@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+if Certification.none?
+  Certification.create([
+                         { description: 'Chartered Financial Analyst' },
+                         { description: 'Certified Commercial Investment Member' },
+                         { description: 'Licensed Salesperson' },
+                         { description: 'Licensed Broker' },
+                         { custom: true }
+                       ])
+end

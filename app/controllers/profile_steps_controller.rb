@@ -1,21 +1,31 @@
 class ProfileStepsController < ApplicationController
   include Wicked::Wizard
-  steps :personal_info, :family
+  include AddFamily
+  include WorkEducationExperience
+  include WorkCertification
+  steps :personal_info, :family, :work_education_experience
   before_action :set_user, :set_profile
 
   def show
     @user.reload unless @user.profile.present?
-    #populate_available_options_for_data
+    populate_available_options_for_data
 
     render_wizard
   end
 
   def update
-    personal_info_save || family_save
+    @certifications = certifications
+
+    save_current_step
+    personal_info_save || family_save || work_education_experience_save
+  end
+
+  def finish_wizard_path
+    #reset_session
+    root_path
   end
 
   def personal_info_save
-    #byebug
     return false unless wizard_value(step) == :personal_info
 
     render_wizard @user
@@ -26,7 +36,21 @@ class ProfileStepsController < ApplicationController
   def family_save
     return false unless wizard_value(step) == :family
 
+    add_family
+
     render_wizard @user
+
+    true
+  end
+
+  def work_education_experience_save
+    return false unless wizard_value(step) == :work_education_experience
+
+    profile_education_save
+    work_experience_save
+    certification_save
+
+    render wizard_path(:work_education_experience)
 
     true
   end
@@ -41,4 +65,16 @@ class ProfileStepsController < ApplicationController
     @profile = @user.profile || Profile.create(user_id: @user.id)
   end
 
+  def save_current_step
+    @profile.current_step = wizard_value(next_step)
+    @profile.save
+  end
+
+  def certifications
+    @certifications ||= Certification.pluck(:description, :id)
+  end
+
+  def populate_available_options_for_data
+    certifications
+  end
 end

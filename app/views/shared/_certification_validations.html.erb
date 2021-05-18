@@ -1,0 +1,41 @@
+<script>
+  <% if profile && profile&.profile_certifications&.count > 1 %>
+    $('.modal-footer').addClass('justify-content-between');
+    $('.btn-outline-danger').removeClass('d-none');
+  <% end %>
+
+  $('.submitCertification<%= profile_certification&.id %>').on('click', (e) => {
+    debugger
+    if (($("#descriptionCertification-<%= profile_certification&.id %>").val() == '' && !$('#editCertificationCustom-<%= profile_certification&.id %>').is(':checked')) || ($('#editCertificationCustom-<%= profile_certification&.id %>').is(':checked') && $("#customDescriptionCertificate-<%= profile_certification&.id %>").val() == '')) {
+      e.preventDefault();
+      $('.error_description').text('Please make a selection');
+      $(".descriptionCertification-<%= profile_certification&.id %>").addClass('error');
+      $('.error_custom').text('Enter your custom license');
+      $("#customDescriptionCertificate-<%= profile_certification&.id %>").addClass('error');
+      setTimeout(() => {
+        $('.error_description').text('');
+        $(".descriptionCertification-<%= profile_certification&.id %>").removeClass('error');
+        $('.error_custom').text('');
+        $("#customDescriptionCertificate-<%= profile_certification&.id %>").removeClass('error');
+      }, 3000);
+    }
+    if ($("#earnedMonth-<%= profile_certification&.id %>").prop("selectedIndex") === 0) {
+      e.preventDefault();
+      $('.error_month').text('Please make a selection');
+      $(".earnedMonth-<%= profile_certification&.id %>").addClass('error');
+      setTimeout(() => {
+        $('.error_month').text('');
+        $(".earnedMonth-<%= profile_certification&.id %>").removeClass('error');
+      }, 3000);
+    }
+    if ($("#earnedYear-<%= profile_certification&.id %>").prop("selectedIndex") === 0) {
+      e.preventDefault();
+      $('.error_year').text('Please make a selection');
+      $(".earnedYear-<%= profile_certification&.id %>").addClass('error');
+      setTimeout(() => {
+        $('.error_year').text('');
+        $(".earnedYear-<%= profile_certification&.id %>").removeClass('error');
+      }, 3000);
+    }
+  })
+</script>

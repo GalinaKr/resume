@@ -1,0 +1,79 @@
+<!--Edit License or Certification Modal-->
+<div class="modal fade" id="editLicenseCertificationModall-<%= freelancer_certification.id %>" tabindex="-1" role="dialog" aria-labelledby="modelLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="postJobStep1Label">Edit Licence or Certification</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <%= form_for :freelancer_certification, url: wizard_path, method: :put do |f| %>
+        <div class="modal-body pt-0">
+          <label for="exampleFormControlMultiSelect" class="h5 mt-3">
+            Licence or Certification
+          </label>
+          <div id="descriptionCertification" class="collapse multi-collapse <%= freelancer_certification.certification.custom? ? '' : 'show' %>">
+            <div class="form-group mb-2">
+              <%= f.select :certification_id,
+                           options_for_select(@certifications, [freelancer_certification.description, freelancer_certification.certification_id]),
+                           {}, class: 'form-control selectpicker', id: "descriptionCertification-#{freelancer_certification&.id}", 'data-style': "bp-btn-select", title: "Select an option..." %>
+            </div>
+            <div class="error_description text-danger mt-1"></div>
+          </div>
+          <div id="customDescriptionCertification" class="collapse multi-collapse <%= freelancer_certification.certification.custom? ? 'show' : '' %>">
+            <div class="form-group mb-2">
+              <%= f.text_field :description, class: "form-control", id: "customDescriptionCertificate-#{freelancer_certification.id}", placeholder: "Custom License Entry", value: freelancer_certification.description %>
+            </div>
+            <div class="error_custom text-danger mt-1"></div>
+          </div>
+
+          <div class="custom-control custom-checkbox">
+            <%= f.check_box :custom,
+                            class: "custom-control-input #{freelancer_certification.certification.custom? ? 'show' : ''}",
+                            id: "editCertificationCustom-#{freelancer_certification&.id}", type: "button",
+                            'data-toggle': "collapse",
+                            'data-target': ".multi-collapse",
+                            'aria-expanded': "false",
+                            'aria-controls': "descriptionCertification customDescriptionCertification",
+                            checked: "#{freelancer_certification.certification.custom? ? 'checked' : 'false'}" %>
+            <label class="custom-control-label" for="editCertificationCustom-<%=freelancer_certification.id %>">Create a custom entry</label>
+          </div>
+
+          <div class="form-group">
+            <label for="earnedMonth" class="h5 mt-3">Date Earned</label>
+            <div class="row mb-3">
+              <div class="col">
+                <%= f.select :earned_month,
+                             options_for_select(select_months_array, freelancer_certification&.earned&.month),
+                             {}, class: 'form-control selectpicker',
+                             id: "earnedMonth-#{freelancer_certification&.id}", 'data-style': "bp-btn-select", title: "Month" %>
+                <div class="error_month text-danger mt-1"></div>
+              </div>
+              <div class="col">
+                <%= f.select :earned_year,
+                             options_for_select(FreelancerCertification::AVAILABLE_YEARS, freelancer_certification&.earned&.year),
+                             {}, class: 'form-control selectpicker',
+                             id: "earnedYear-#{freelancer_certification&.id}", 'data-style': "bp-btn-select", title: "Year" %>
+                <div class="error_year text-danger mt-1"></div>
+              </div>
+            </div>
+            <%= f.hidden_field :id, value: freelancer_certification.id %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit 'Delete', class: "btn btn-outline-danger mr-2 d-none" %>
+          <%= f.submit 'Save Changes', class: "btn btn-primary submitCertification#{freelancer_certification&.id}" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render partial: 'freelancer/shared/certification_validations', locals: { freelancer_profile: @freelancer_profile, freelancer_certification: freelancer_certification } %>
+
+<script>
+  $('#editSelectCertification-' + <%= freelancer_certification.id %>).on('click', () => {
+    $('#customDescriptionCertificate-' + <%= freelancer_certification.id %>).val('');
+  })
+</script>
+
