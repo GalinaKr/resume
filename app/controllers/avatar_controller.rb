@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-class AvatarController < ApplicationController
+class AvatarController < BaseAvatarsController
   def update
+    #byebug
     return unless valid_input_file?
 
     @user = current_user
