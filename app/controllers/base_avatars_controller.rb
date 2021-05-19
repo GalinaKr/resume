@@ -25,7 +25,6 @@ class BaseAvatarsController < ApplicationController
   end
 
   def process_and_save_new_image!(object)
-    byebug
     image = MiniMagick::Image.open(params.require(:avatar).path)
     service = AvatarFormatService.new(image)
     service.convert
