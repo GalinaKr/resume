@@ -3,7 +3,7 @@ class ProfileStepsController < ApplicationController
   include AddFamily
   include WorkEducationExperience
   include WorkCertification
-  steps :personal_info, :family, :work_education_experience
+  steps :personal_info, :family, :work_education_experience, :summary
   before_action :set_user, :set_profile
 
   def show
@@ -25,9 +25,22 @@ class ProfileStepsController < ApplicationController
     root_path
   end
 
+  def summary_save
+    return false unless wizard_value(step) == :summary
+
+    @profile.save
+    render_wizard @user
+
+    true
+  end
+
   def personal_info_save
     return false unless wizard_value(step) == :personal_info
 
+    @user.location = params[:user][:location]
+    @user.personal_tax_number = params[:user][:personal_tax_number]
+    @user.birthday = params[:user][:birthday]
+    @user.save
     render_wizard @user
 
     true

@@ -79,7 +79,7 @@
                 <div class="col-md"> Earned <%= certification&.earned&.strftime("%b %Y") %></div>
               </div>
             </div>
-            <%= render 'edit_licences_or_certification', certification: certification %>
+            <%= render 'edit_licences_or_certification', profile_certification: certification %>
             <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editLicenseCertificationModall-<%= certification.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
           </div>
         <% end %>

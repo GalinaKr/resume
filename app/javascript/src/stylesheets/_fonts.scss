@@ -1,3 +1,8 @@
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
 /* nunito-sans-400normal - latin */
 @font-face {
   font-family: 'Nunito Sans';

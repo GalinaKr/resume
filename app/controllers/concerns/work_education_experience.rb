@@ -102,7 +102,7 @@ module WorkEducationExperience
       @profile&.profile_educations&.find_by(id: params[:profile_education][:id])
   end
 
-  def language_profile
-    @language ||= @profile&.languages&.find_by(id: params[:languages][:id])
+  def language
+    @language ||= @profile&.languages&.find_by(id: params[:language][:id])
   end
 end

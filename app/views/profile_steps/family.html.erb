@@ -1,4 +1,5 @@
 <%= render 'nav_bar/profile_flow_nav_bar' %>
+<div class="container pr-0 pl-0" style="max-width: 720px;"><%= render partial: 'shared/notice_and_alert' %></div>
 
 <!--Progress Meter, Step 4-->
 <div class="container mb-4">
@@ -18,7 +19,7 @@
           <div class="mb-4">
             <% if @profile.families.present? %>
               <% @profile.families.order(f_birthday: :desc).each do |family| %>
-                <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="d-flex mb-3">
                   <div class="w-100">
                     <div class="row">
                       <div class="col mb-1 text text-wrap text-break"><%= family.degree_of_kinship %></div>
@@ -27,7 +28,7 @@
                       <div class="col-md text-wrap text-break"><%= family.full_name %>,<%= family.f_birthday %>, <%= family.place_of_work %></div>
                     </div>
                   </div>
-                  <%= render 'edit_family', { family: family, profile: @profile } %>
+                  <%= render 'edit_family', { family: family } %>
                   <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editFamilyModal-<%= family.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
                 </div>
               <% end %>

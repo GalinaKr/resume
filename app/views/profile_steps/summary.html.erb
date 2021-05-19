@@ -1,0 +1,31 @@
+<%= render partial: 'navigation', locals: { section: 'jobs' } %>
+
+<div class="container mb-5">
+  <%= render partial: 'shared/notice_and_alert' %>
+  <div class="mt-4">
+
+      <div class="h1">
+        Please verify your information.
+      </div>
+
+  </div>
+  <div class="container bp-card">
+    <%= render partial: 'shared/summary', locals: { editable: @profile.editable?(current_user) } %>
+    <hr>
+    <div class="mt-3">
+      <h4>Email</h4>
+      <p><%= @profile.user.email %></p>
+    </div>
+    <div class="mt-4">
+      <div class="d-flex">
+          <div class="ml-auto">
+            <%= form_for @profile, url: wizard_path, method: :put do |f| %>
+              <%= f.hidden_field :draft, value: false %>
+              <%= f.submit 'Submit Application', class: 'btn btn-primary d-none d-sm-block' %>
+              <%= f.submit 'Submit', class: 'btn btn-primary d-sm-none' %>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

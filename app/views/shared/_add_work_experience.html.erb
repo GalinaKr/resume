@@ -9,12 +9,12 @@
         </button>
       </div>
 
-      <%= form_for :freelancer_profile_experience, url: freelancer_change_work_experience_path do |f| %>
-        <%= render partial: 'freelancer/shared/form_work_experience', locals: { freelancer_profile_experience: nil, f: f,
-                                                                                modal_id: (freelancer_profile.freelancer_profile_experiences.size + 1),
-                                                                                freelancer_profile: freelancer_profile } %>
+      <%= form_for :profile_experience, url: change_work_experience_path do |f| %>
+        <%= render partial: 'shared/form_work_experience', locals: { profile_experience: nil, f: f,
+                                                                                modal_id: (profile.profile_experiences.size + 1),
+                                                                                profile: profile } %>
       <% end %>
     </div>
   </div>
 </div>
-<%= render partial: 'freelancer_profile_steps/date_validation' %>
+<%= render partial: 'profile_steps/date_validation' %>

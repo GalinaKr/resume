@@ -1,4 +1,4 @@
-<div class="modal fade" id="editWorkExperienceModal-<%= freelancer_profile_experience.id %>" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal fade" id="editWorkExperienceModal-<%= profile_experience.id %>" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -8,12 +8,12 @@
         </button>
       </div>
 
-      <%= form_for :freelancer_profile_experience, url: wizard_path, method: :put do |f| %>
-        <%= render partial: 'freelancer/shared/form_work_experience', locals: { freelancer_profile_experience: freelancer_profile_experience, f: f,
-                                                                                modal_id: freelancer_profile_experience.id,
-                                                                                freelancer_profile: freelancer_profile } %>
+      <%= form_for :profile_experience, url: wizard_path, method: :put do |f| %>
+        <%= render partial: 'shared/form_work_experience', locals: { profile_experience: profile_experience, f: f,
+                                                                                modal_id: profile_experience.id,
+                                                                                profile: profile } %>
       <% end %>
     </div>
   </div>
 </div>
-<%= render partial: 'freelancer_profile_steps/date_validation' %>
+<%= render partial: 'profile_steps/date_validation' %>

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProfileExperience < ApplicationRecord
-  belongs_to :freelancer_profile
+  belongs_to :profile
 
   validates :job_title, presence: true
   validates :company, presence: true

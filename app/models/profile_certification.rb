@@ -5,7 +5,7 @@ class ProfileCertification < ApplicationRecord
   belongs_to :certification
   has_one :user, through: :profile
 
-  validates :description, presence: true, uniqueness: { scope: :freelancer_profile_id }
+  validates :description, presence: true, uniqueness: { scope: :profile_id }
 
   AVAILABLE_YEARS = (40.years.ago.year..Time.now.year).reverse_each
 
