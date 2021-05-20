@@ -4,9 +4,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title" id="postJobStep1Label">Edit Education</h1>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <%= form_for :profile_education, url: change_educations_path do |f| %>
         <%= render partial: 'shared/form_educations', locals: {profile_education: profile_education, f: f,

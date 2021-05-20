@@ -33,8 +33,8 @@ class Profile < ApplicationRecord
     @email ||= user.email
   end
 
-  def editable?(user)
-    user_id == user&.id
+  def location
+    @location ||= user.location
   end
 
   private

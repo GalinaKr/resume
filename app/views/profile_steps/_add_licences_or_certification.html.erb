@@ -46,14 +46,14 @@
               <div class="col">
                 <%= f.select :earned_month,
                              options_for_select(select_months_array),
-                             {}, class: 'form-control selectpicker',
+                             {}, class: 'form-control form-select',
                              id: 'earnedMonth-', 'data-style': "bp-btn-select", title: "Month" %>
                 <div class="error_month text-danger mt-1"></div>
               </div>
               <div class="col">
                 <%= f.select :earned_year,
                              options_for_select(ProfileCertification::AVAILABLE_YEARS),
-                             {}, class: 'form-control selectpicker',
+                             {}, class: 'form-control form-select',
                              id: 'earnedYear-', 'data-style': "bp-btn-select", title: "Year" %>
                 <div class="error_year text-danger mt-1"></div>
               </div>

@@ -16,7 +16,7 @@
             <label for="degreeSelect" class="h5">Degree</label>
             <%= f.select :degree,
                          options_for_select(ProfileEducation.degrees.keys),
-                         {}, class: 'form-control selectpicker',
+                         {}, class: 'form-control form-select',
                          id: 'degreeSelect', required: true, 'data-style': "bp-btn-select",
                          title: "Please make a selection" %>
           </div>
@@ -30,7 +30,7 @@
               <div class="col">
                 <%= f.select :graduation_year,
                              options_for_select(ProfileEducation::AVAILABLE_YEARS),
-                             {}, class: 'form-control selectpicker',
+                             {}, class: 'form-control form-select',
                              id: 'graduationYear', 'data-style': "bp-btn-select", title: "Year" %>
             </div>
             <div class="col"></div>

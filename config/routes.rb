@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :profiles
 
   post 'add_family', to: 'profile#change_family'
+  post 'change_basic_info', to: 'profile#change_basic_info'
 
   resources :avatar, only: %i[update destroy]
   resources :profile_steps

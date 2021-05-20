@@ -27,7 +27,7 @@
                          options_for_select(
                            select_months_array,
                            profile_experience&.start_date&.month),
-                         {}, class: 'form-control selectpicker',
+                         {}, class: 'form-control form-select',
                          id: "startMonth-#{modal_id}",
                          'data-style': "bp-btn-select",
                          title: "Month" %>
@@ -36,7 +36,7 @@
             <%= f.select :start_year,
                          options_for_select(ProfileExperience::AVAILABLE_YEARS,
                                             profile_experience&.start_date&.year),
-                         {}, class: 'form-control selectpicker',
+                         {}, class: 'form-control form-select',
                          id: "startYear-#{modal_id}",
                          'data-style': "bp-btn-select",
                          title: "Year" %>
@@ -52,7 +52,7 @@
                          options_for_select(
                            select_months_array,
                            profile_experience&.end_date&.month),
-                         {}, class: 'form-control selectpicker',
+                         {}, class: 'form-control form-select',
                          id: "endMonth-#{modal_id}",
                          'data-style': "bp-btn-select", title: "Month" %>
           </div>
@@ -60,7 +60,7 @@
             <%= f.select :end_year,
                          options_for_select(ProfileExperience::AVAILABLE_YEARS,
                                             profile_experience&.end_date&.year),
-                         {}, class: 'form-control selectpicker',
+                         {}, class: 'form-control form-select',
                          id: "endYear-#{modal_id}",
                          'data-style': "bp-btn-select", title: "Year" %>
           </div>

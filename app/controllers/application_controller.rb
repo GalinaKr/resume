@@ -2,7 +2,6 @@
 
 class ApplicationController < ActionController::Base
   include LoggedInRedirects
-  include Pagy::Backend
 
   #before_action :store_location
 

@@ -13,14 +13,11 @@
       <h2 class="mb-1"><%= profile.full_name %></h2>
       <div class="bp-text-sm">
         <%= profile.professional_title %><br>
-        <%= profile.location %>
       </div>
     </div>
   </div>
-  <% if editable %>
     <div class="d-flex-col ml-auto">
-      <button class="btn btn-link shadow-none p-0 align-self-start ml-auto" type="button"  data-bs-toggle="modal" data-target="#editProfileModal-<%= profile.id %>"><i class="fas fa-edit text-primary"></i></button>
+      <button class="btn btn-link shadow-none p-0 align-self-start ml-auto" type="button"  data-bs-toggle="modal" data-bs-target="#editProfileModal-<%= profile.id %>"><i class="fas fa-edit text-primary"></i></button>
     </div>
     <%= render 'shared/edit_basic_info', profile: profile, redirect_reference: '' %>
-  <% end %>
 </div>
