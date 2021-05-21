@@ -1,0 +1,27 @@
+<!-- Certification area -->
+<div class="d-flex">
+  <div class="d-flex flex-sm-row flex-column">
+    <div class="ml-sm-3 mt-1 align-self-sm-center mt-sm-0">
+      <div class="mb-5">
+        <div class="h5">
+          Work Licenses & Certifications
+        </div>
+        <% if profile.profile_certifications.present? %>
+          <% profile.profile_certifications.order(earned: :desc).each do |certification| %>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div class="w-100">
+                <div class="row">
+                  <div class="col-md text text-wrap text-break"><%= certification&.description %></div>
+                  <div class="col-md"> Earned <%= certification&.earned&.strftime("%b %Y") %></div>
+                </div>
+              </div>
+              <%= render 'edit_licences_or_certification', profile_certification: certification %>
+              <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#editLicenseCertificationModall-<%= certification.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
+            </div>
+          <% end %>
+        <% end %>
+        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addLicenseCertificationModal"><i class="fas fa-plus mr-2"></i>Add New</button>
+      </div>
+    </div>
+  </div>
+</div>

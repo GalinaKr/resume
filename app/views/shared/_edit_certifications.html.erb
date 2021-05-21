@@ -5,7 +5,7 @@
         <h1 class="modal-title" id="postJobStep1Label">Edit Licence or Certification</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <%= form_for :profile_certification, url: change_certifications_path do |f| %>
+      <%= form_for :profile_certification, url: change_certification_path do |f| %>
         <%= render partial: 'shared/form_certifications', locals: {freelancer_certification: freelancer_certification, f: f} %>
       <% end %>
     </div>

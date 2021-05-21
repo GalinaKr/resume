@@ -7,7 +7,7 @@
       </div>
 
       <%= form_for :profile_experience, url: wizard_path, method: :put do |f| %>
-        <%= render partial: 'shared/form_work_experience', locals: { profile_experience: profile_experience, f: f,
+        <%= render partial: 'forms/form_work_experience', locals: { profile_experience: profile_experience, f: f,
                                                                                 modal_id: profile_experience.id,
                                                                                 profile: profile } %>
       <% end %>

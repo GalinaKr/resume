@@ -6,7 +6,7 @@
   }
 </style>
 
-<div class="modal fade" id="editProfileModal-<%= profile.id %>" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal fade" id="editProfileModal-<%= profile.id %>" tabindex="-1" role="dialog" aria-labelledby="editProfileModal" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -21,7 +21,7 @@
           </div>
         </div>
         <%= form_for :profile, url: change_basic_info_path do |f| %>
-          <%= f.hidden_field :redirect_reference, value: redirect_reference %>
+
           <div class="mb-3 avatar">
             <% if profile.avatar.attached? %>
               <div class="d-flex flex-column flex-sm-row align-items-center">
@@ -128,7 +128,7 @@
   </div>
 </div>
 <%= render 'shared/update_avatar', url: avatar_path %>
-<%= render 'shared/location_check', controller_name: 'freelancer_profile', experience_modal_id: nil %>
+
 
 <script>
   $(document).on('turbolinks:load', function (e) {

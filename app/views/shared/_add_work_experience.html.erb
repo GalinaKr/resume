@@ -8,7 +8,7 @@
       </div>
 
       <%= form_for :profile_experience, url: change_work_experience_path do |f| %>
-        <%= render partial: 'shared/form_work_experience', locals: { profile_experience: nil, f: f,
+        <%= render partial: 'forms/form_work_experience', locals: { profile_experience: nil, f: f,
                                                                                 modal_id: (profile.profile_experiences.size + 1),
                                                                                 profile: profile } %>
       <% end %>

@@ -20,8 +20,10 @@ Rails.application.routes.draw do
   resources :families
   resources :profiles
 
-  post 'add_family', to: 'profile#change_family'
+  post 'change_family', to: 'profile#change_family'
   post 'change_basic_info', to: 'profile#change_basic_info'
+  post 'change_education', to: 'profile#change_education'
+  post 'add_educations', to: 'profile#change_educations'
 
   resources :avatar, only: %i[update destroy]
   resources :profile_steps

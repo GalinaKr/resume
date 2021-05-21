@@ -26,7 +26,6 @@ class ProfileStepsController < ApplicationController
   end
 
   def summary_save
-    byebug
     return false unless wizard_value(step) == :summary
 
     @profile.save

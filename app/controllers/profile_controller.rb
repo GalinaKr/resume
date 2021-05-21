@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProfileController < ApplicationController
-  before_action :authenticate_user!, :initial_check, :profile
+  before_action :authenticate_user!, :profile
   include AddFamily
   include WorkEducationExperience
   include WorkCertification
@@ -34,6 +34,30 @@ class ProfileController < ApplicationController
     else
       redirect_after_change_profile
     end
+  end
+
+  def change_education
+    education_options
+
+    redirect_after_change_profile
+  end
+
+  def change_work_experience
+    work_experience_save
+
+    redirect_after_change_profile
+  end
+
+  def change_certification
+    profile_certification_options
+
+    redirect_after_change_profile
+  end
+
+  def change_language
+    language_save
+
+    redirect_after_change_profile
   end
 
   private
