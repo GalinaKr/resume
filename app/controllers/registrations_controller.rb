@@ -33,27 +33,22 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def check_signed_in
-    byebug
     redirect_to current_signup_step_url if signed_in?
   end
 
   def after_sign_in_path_for(_resource)
-    byebug
     profile_steps_path(current_user)
   end
 
   def after_sign_up_path_for(_resource)
-    byebug
     forward_user_to_steps
   end
 
   def after_inactive_sign_up_path_for(_resource)
-    byebug
     forward_user_to_steps
   end
 
   def after_update_path_for(_resource)
-    byebug
     forward_user_to_steps
   end
 
