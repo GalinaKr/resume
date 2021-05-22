@@ -24,7 +24,10 @@ class ProfileController < ApplicationController
   def change_basic_info
     @profile.user.update(
       first_name: params[:profile][:first_name],
+      second_name: params[:profile][:second_name],
       last_name: params[:profile][:last_name],
+      personal_tax_number: params[:profile][:personal_tax_number],
+      phone_number: params[:profile][:phone_number],
       location: params[:profile][:location]
     )
     @profile.update(change_basic_info_params)

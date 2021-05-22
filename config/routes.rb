@@ -21,9 +21,16 @@ Rails.application.routes.draw do
   resources :profiles
 
   post 'change_family', to: 'profile#change_family'
+  post 'add_family', to: 'profile#change_family'
   post 'change_basic_info', to: 'profile#change_basic_info'
   post 'change_education', to: 'profile#change_education'
-  post 'add_educations', to: 'profile#change_educations'
+  post 'add_educations', to: 'profile#change_education'
+  post 'change_work_experience', to: 'profile#change_work_experience'
+  post 'add_work_experience', to: 'profile#change_work_experience'
+  post 'change_language', to: 'profile#change_language'
+  post 'add_language', to: 'profile#change_language'
+  post 'change_certification', to: 'profile#change_certification'
+  post 'add_certification', to: 'profile#change_certification'
 
   resources :avatar, only: %i[update destroy]
   resources :profile_steps

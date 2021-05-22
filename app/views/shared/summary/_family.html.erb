@@ -1,1 +1,32 @@
 <!-- Family area -->
+<div class="d-flex">
+  <div class="d-flex flex-sm-row flex-column">
+    <div class="ml-sm-3 mt-1 align-self-sm-center mt-sm-0">
+      <div class="mb-5">
+        <div class="h5">
+          Family
+        </div>
+        <% if profile.families.present? %>
+          <% profile.families.order(f_birthday: :asc).each do |family| %>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div class="w-100">
+                <div class="row">
+                  <div class="col mb-1 text text-wrap text-break"> <%= family.degree_of_kinship %></div>
+                </div>
+                <div class="row bp-text-sm">
+                  <div class="col-md text-wrap text-break"><%= family.full_name %>, <%= family.f_birthday %></div>
+                  <div class="col-md"><%= family.place_of_work %></div>
+                </div>
+              </div>
+              <%= render 'shared/edit_family', family: family %>
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editFamilyModal-<%= family.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
+            </div>
+          <% end %>
+        <% end %>
+        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addFamilyModal"><i class="fas fa-plus mr-2"></i>Add New</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/add_family' %>

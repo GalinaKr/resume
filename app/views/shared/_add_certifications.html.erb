@@ -8,7 +8,7 @@
           <span aria-hidden="true">×</span>
         </button>
       </div>
-      <%= form_for :profile_certification, url: add_certifications_path do |f| %>
+      <%= form_for :profile_certification, url: add_certification_path do |f| %>
         <%= render partial: 'forms/form_certifications', locals: {profile_certification: nil, f: f} %>
       <% end %>
     </div>

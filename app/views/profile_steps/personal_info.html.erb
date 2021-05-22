@@ -58,10 +58,10 @@
             <%= f.label I18n.t :personal_number, class: 'form-label' %>
             <%= f.text_field :personal_tax_number, class: 'form-control' %>
           </div>
-        </div>
-        <div class="">
-          <%= f.label I18n.t :birthday, class: 'form-label' %>
-          <%= f.date_field :birthday, class: 'form-control' %>
+          <div class="col-md text-wrap text-break">
+            <%= f.label I18n.t :birthday, class: 'form-label' %>
+            <%= f.text_field :birthday, class: 'form-control' %>
+          </div>
         </div>
 
         <div class="justify-content-right">
@@ -73,21 +73,9 @@
 </div>
 
 <script>
-  $('#_change_last_name').on ('click', function (e) {
-    $('#changes').toggle('collapse')
+  $('#addAdditionalInfo').on ('click', function (e) {
+    $('#additionalInformation').toggle('collapse')
   })
-
-  $('#other'). on ('click', function (e) {
-      $('#other_reason_of_change_name').toggle('collapse')
-  })
-
-  $('#marriage'). on ('click', function (e) {
-      $('#marr_reason_of_change_name').toggle('collapse')
-  })
-
-
-
-
 
     $('.avatar').on('change', '#uploadProfilePic', function (e) {
         var file = e.target.files[0];

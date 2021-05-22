@@ -10,7 +10,7 @@
       </div>
       <%= form_for :profile_education, url: change_education_path do |f| %>
         <%= render partial: 'forms/form_educations', locals: {profile_education: profile_education, f: f,
-                                                                          modal_id: profile_education.id} %>
+                                                              modal_id: profile_education.id} %>
       <% end %>
     </div>
   </div>

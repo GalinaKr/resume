@@ -23,6 +23,7 @@ class ProfileStepsController < ApplicationController
   def finish_wizard_path
     reset_session
     root_path
+    #render_wizard @user
   end
 
   def summary_save
