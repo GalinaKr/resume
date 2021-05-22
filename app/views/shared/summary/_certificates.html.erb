@@ -16,11 +16,11 @@
                 </div>
               </div>
               <%= render 'edit_licences_or_certification', profile_certification: certification %>
-              <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#editLicenseCertificationModall-<%= certification.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editLicenseCertificationModall-<%= certification.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
             </div>
           <% end %>
         <% end %>
-        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addLicenseCertificationModal"><i class="fas fa-plus mr-2"></i>Add New</button>
+        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addLicenseCertificationModal"><i class="fas fa-plus mr-2"></i>Add New</button>
       </div>
     </div>
   </div>

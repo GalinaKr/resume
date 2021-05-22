@@ -8,6 +8,7 @@
     }
 
     $('.container').off('click').on('click', '#submitWithLocationCheck', (e) => {
+        debugger
       e.preventDefault();
       e.stopPropagation();
       const locationValue = $('#freelancerLocationInput').val() || $('#userLocationInput').val();

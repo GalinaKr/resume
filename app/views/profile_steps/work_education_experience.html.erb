@@ -36,11 +36,11 @@
               </div>
             </div>
             <%= render 'edit_work_experience', { profile_experience: work_exp, profile: @profile } %>
-            <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#editWorkExperienceModal-<%= work_exp.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
+            <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editWorkExperienceModal-<%= work_exp.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
           </div>
         <% end %>
       <% end %>
-      <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addWorkExperienceModal"><i class="fas fa-plus mr-2"></i>Add Experience</button>
+      <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addWorkExperienceModal"><i class="fas fa-plus mr-2"></i>Add Experience</button>
     </div>
 
     <div class="mb-4">
@@ -60,11 +60,11 @@
               </div>
             </div>
             <%= render 'edit_education', profile_education: education_exp %>
-            <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#editEducationModal-<%= education_exp.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
+            <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editEducationModal-<%= education_exp.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
           </div>
         <% end %>
       <% end %>
-      <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addEducationModal"><i class="fas fa-plus mr-2"></i>Add Education</button>
+      <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addEducationModal"><i class="fas fa-plus mr-2"></i>Add Education</button>
     </div>
 
     <div class="mb-5">
@@ -81,11 +81,11 @@
               </div>
             </div>
             <%= render 'edit_licences_or_certification', profile_certification: certification %>
-            <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#editLicenseCertificationModall-<%= certification.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
+            <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editLicenseCertificationModall-<%= certification.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
           </div>
         <% end %>
       <% end %>
-      <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addLicenseCertificationModal"><i class="fas fa-plus mr-2"></i>Add New</button>
+      <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addLicenseCertificationModal"><i class="fas fa-plus mr-2"></i>Add New</button>
     </div>
 
     <div class="mb-5">
@@ -101,11 +101,11 @@
             </div>
           </div>
           <%= render 'edit_language', language: lang %>
-          <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#editLanguageModal-<%= lang.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
+          <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editLanguageModal-<%= lang.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
         </div>
       <% end %>
     <% end %>
-    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addLanguageModal"><i class="fas fa-plus mr-2"></i>Add Language</button>
+    <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addLanguageModal"><i class="fas fa-plus mr-2"></i>Add Language</button>
   </div>
 
     <div class="d-flex justify-content-between">
