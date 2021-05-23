@@ -30,30 +30,67 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: Sign Up for Resume
-  profile: Profile
-  personal_information: Personal information
-  info_about_family: Family
-  user_first_name: First Name
-  user_second_name: Second Name
-  user_last_name: Last Name
-  phone_number: Phone Number
-  email: Email
-  location: Location
-  personal_number: Personal tax number
-  upload_photo: Upload photo
-  delete: Delete
-  next: Next
-  back: Back
-  sign_up_with_email: Sign Up with Email
-  sign_up_with_gemail: Sign Up with Gmail
-  create_password: Create a Password
-  change_last_name: Change Last Name, First Name, Second Name
-  date_of_change_name: Date of change
-  reason_of_change_name: Reason for change
-  degree_of_kinship: Degree of Kinship
-  place_of_work: Place of Study or Work
-  birthday: Date of Birth
-  professional_title: Professional Title
-  professional_summary: Professional Summary
-  save_changes: Save Changes
+  interface:
+    hello: Sign Up for Resume
+    profile: Profile
+    personal_information: Personal information
+    info_about_family: Family
+    sign_up_with_email: Sign Up with Email
+    sign_up_with_gemail: Sign Up with Gmail
+    create_password: Create a Password
+    change_last_name: Change Last Name, First Name, Second Name
+    date_of_change_name: Date of change
+    reason_of_change_name: Reason for change
+    professional_title: Professional Title
+    professional_summary: Professional Summary
+    veryfy_info: Please verify your information
+    licence: Licence or Certification
+    year: Year
+    month: Month
+    date_earned: Date Earned
+    custom_entry: Create a custom entry
+    select_an_option: Select an option...
+    institution: Institution
+    degree: Degree
+    make_selection: Please make a selection
+    cource_of_study: Course of Study
+    currently_studying: Currently Studying
+    description: Description
+    optional: optional
+    lang_level: Level of Knowlage
+    company: Company
+    job_title: Job Title
+    location: Location
+    start_date: Start Date
+    end_date: End Date
+    current_job: This is my current job
+    help: For help contact us at
+  button:
+    save_changes: Save Changes
+    upload_photo: Upload photo
+    delete: Delete
+    next: Next
+    back: Back
+    save: Save
+    log_out: Log Out
+    add_new: Add New
+    submit: Submit Application
+  placeholder:
+    degree_programm: Enter your degree program
+    brief_description: Enter a brief description
+    company_name: Enter the company name
+    job_title: Enter your job title
+    location: e.g. San Francisco, CA
+    job_description: Enter your job description
+    email: Email address
+  user:
+    first_name: First Name
+    second_name: Second Name
+    last_name: Last Name
+    phone_number: Phone Number
+    email: Email
+    location: Location
+    personal_number: Personal tax number
+    birthday: Date of Birth
+    degree_of_kinship: Degree of Kinship
+    place_of_work: Place of Study or Work

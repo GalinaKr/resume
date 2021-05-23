@@ -1,0 +1,93 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+ru:
+  interface:
+    hello: Зарегистрируйтесь в приложении Resume
+    profile: Profile
+    personal_information: Персональная информация
+    info_about_family: Семья
+    sign_up_with_email: Зарегистрируйтесь с Email
+    sign_up_with_gemail: Войдите с Gmail
+    create_password: Задайте пароль
+    professional_title: Professional Title
+    professional_summary: Professional Summary
+    veryfy_info: Пожалуйста, проверьте введенную информацию
+    licence: Лицензии или сертификаты
+    year: Год
+    month: Месяц
+    date_earned: Дата окончания
+    custom_entry: Задайте свое значение
+    select_an_option: Выберите опцию...
+    institution: ВУЗ
+    degree: Степень
+    make_selection: Пожалуйста, сделайте выбор
+    cource_of_study: Специальность
+    currently_studying: Все еще учусь
+    description: Описание
+    optional: опционально
+    lang_level: Уровень
+    company: Компания
+    job_title: Должность
+    location: Расположение
+    start_date: Дата начала
+    end_date: Дата окончания
+    current_job: Это моя текущая работа
+    help: Возникли проблемы? Напишите нам на
+  button:
+    save_changes: Сохранить изменения
+    upload_photo: Загрузить фото
+    delete: Удалить
+    next: Следующий шаг
+    back: Вернуться
+    save: Сохранить
+    log_out: Выйти
+    add_new: Добавить
+    submit: Submit Application
+  placeholder:
+    degree_programm: Enter your degree program
+    brief_description: Enter a brief description
+    company_name: Enter the company name
+    job_title: Enter your job title
+    location: например, Энергодар
+    job_description: Краткое описание Ваших должностных обязанностей
+    email: Email фдрес
+  user:
+    first_name: Имя
+    second_name: Отчество
+    last_name: Фамилия
+    phone_number: Номер Телефона
+    email: Email
+    location: Место рождения
+    personal_number: ИНН
+    birthday: Дата Рождения
+    degree_of_kinship: Степень родства
+    place_of_work: Место учебы/ работы
