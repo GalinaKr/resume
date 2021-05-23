@@ -12,7 +12,7 @@
   <div class="card mb-5 mx-auto" style="max-width:800px">
     <div class="card-title text-center">
       <div class="h2">
-        <%= I18n.t :personal_information %>
+        <%= I18n.t('interface.steps.personal_info.title') %>
       </div>
     </div>
     <div class="card-body">
@@ -20,8 +20,8 @@
       <%= form_for @user, url: wizard_path, method: :put do |f| %>
         <div class="row">
           <div class="col-md mb-5 text-center avatar">
-            <h2>Profile Picture</h2>
-            <p class="mb-4">Users with a clear and recognizable photo are hired more often. <strong>(Optional)</strong></p>
+            <h2><%= I18n.t('interface.steps.personal_info.picture') %></h2>
+            <p class="mb-4"><%= t('interface.steps.personal_info.placeholder.picture') %> <strong>(<%= t('interface.optional') %>)</strong></p>
             <% if @profile.avatar.attached? %>
               <div class="text-light mb-3 avatar-image" style="font-size: 170px;line-height: 0;">
                 <%= image_tag @profile.avatar, class: 'rounded-circle' %>
@@ -29,11 +29,11 @@
               <div class="custom-file">
                 <%= f.file_field :profile_avatar, multiple: false, name: 'avatar', class: "d-none", id: "uploadProfilePic" %>
                 <label class="btn btn-outline-primary mb-0" for="uploadProfilePic">
-                  <%= I18n.t :upload_photo %>
+                  <%= I18n.t('button.upload_photo') %>
                 </label>
                 <button type="button" class="delete-avatar d-none" id="deleteProfilePic"></button>
                 <label class="btn btn-outline-danger mb-0 ml-2" for="deleteProfilePic">
-                  <%= I18n.t :delete %>
+                  <%= I18n.t('button.delete') %>
                 </label>
               </div>
             <% else %>
@@ -41,7 +41,7 @@
               <div class="custom-file">
                 <%= f.file_field :profile_avatar, multiple: false, name: 'avatar', class: "d-none", id: "uploadProfilePic" %>
                 <label class="btn btn-outline-primary" for="uploadProfilePic">
-                  <%= I18n.t :upload_photo %>
+                  <%= I18n.t('button.upload_photo') %>
                 </label>
               </div>
             <% end %>
@@ -53,17 +53,17 @@
           <div class="col-md text-center mb-5">
             <hr class="d-md-none mt-0">
             <div class="form-group text-left">
-              <label for="freelancerLocationInput" class="h5">Location</label>
-              <%= f.text_field :location, class: "form-control", id: "freelancerLocationInput", placeholder: "City, State abbreviation", required: true %>
+              <label for="freelancerLocationInput" class="h5"><%= t('interface.steps.personal_info.location') %></label>
+              <%= f.text_field :location, class: "form-control", id: "freelancerLocationInput", placeholder: t('interface.steps.personal_info.placeholder.location'), required: true %>
             </div>
             <div class="error-location text-danger mb-2"></div>
           </div>
           <div class="col">
-            <%= f.label I18n.t :personal_number, class: 'form-label' %>
+            <%= f.label I18n.t('user.personal_number'), class: 'form-label' %>
             <%= f.text_field :personal_tax_number, class: 'form-control' %>
           </div>
           <div class="col-md text-wrap text-break">
-            <%= f.label I18n.t :birthday, class: 'form-label' %>
+            <%= f.label I18n.t('user.birthday'), class: 'form-label' %>
             <%= f.date_field :birthday, class: 'form-control' %>
           </div>
         </div>

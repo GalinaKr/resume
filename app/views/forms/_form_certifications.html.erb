@@ -1,6 +1,6 @@
 <div class="modal-body pt-0 pb-0">
   <label for="exampleFormControlMultiSelect" class="h5">
-    <%= I18n.t('interface.licence') %>
+    <%= I18n.t('interface.steps.certification.form.add_title') %>
   </label>
   <div id="descriptionCertification" class="collapse multi-collapse <%= profile_certification&.certification&.custom? ? '' : 'show' %>">
     <div class="form-group mb-2 de'scriptionCertification-<%= profile_certification&.id %>">
@@ -30,24 +30,24 @@
                     'aria-expanded': "false",
                     'aria-controls': "descriptionCertification customDescriptionCertification",
                     checked: "#{profile_certification&.certification&.custom? ? 'checked' : 'false'}" %>
-    <label class="custom-control-label" for="editCertificationCustom-<%=profile_certification&.id %>"><%= I18n.t('interface.custom_entry') %></label>
+    <label class="custom-control-label" for="editCertificationCustom-<%=profile_certification&.id %>"><%= I18n.t('interface.steps.certification.form.custom') %></label>
   </div>
 
   <div class="form-group">
-    <label for="earnedMonth-<%= profile_certification&.id %>" class="h5"><%= I18n.t('interface.date_earned') %></label>
+    <label for="earnedMonth-<%= profile_certification&.id %>" class="h5"><%= I18n.t('interface.steps.education.form.date_earned') %></label>
     <div class="row">
       <div class="col earnedMonth-<%= profile_certification&.id %>">
         <%= f.select :earned_month,
                      options_for_select(select_months_array, profile_certification&.earned&.month),
                      {}, class: 'form-control selectpicker',
-                     id: "earnedMonth-#{profile_certification&.id}", 'data-style': "bp-btn-select", title: I18n.t('interface.month') %>
+                     id: "earnedMonth-#{profile_certification&.id}", 'data-style': "bp-btn-select", title: I18n.t('interface.date.month') %>
         <div class="error_month text-danger mt-1"></div>
       </div>
       <div class="col earnedYear-<%= profile_certification&.id %>">
         <%= f.select :earned_year,
                      options_for_select(ProfileCertification::AVAILABLE_YEARS, profile_certification&.earned&.year),
                      {}, class: 'form-control selectpicker',
-                     id: "earnedYear-#{profile_certification&.id}", 'data-style': "bp-btn-select", title: I18n.t('interface.year') %>
+                     id: "earnedYear-#{profile_certification&.id}", 'data-style': "bp-btn-select", title: I18n.t('interface.date.year') %>
         <div class="error_year text-danger mt-1"></div>
       </div>
     </div>

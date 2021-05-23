@@ -14,7 +14,7 @@
     <div class="card-title text-center">
       <div class="h2">
         <div class="text-center">
-          <h2><%= I18n.t :info_about_family %></h2>
+          <h2><%= I18n.t('interface.steps.family.title') %></h2>
         </div>
         <div class="mb-4">
           <% if @profile.families.present? %>
@@ -36,7 +36,7 @@
             <% end %>
           <% end %>
           <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addFamilyModal">
-            <i class="fas fa-plus mr-2"></i>Add Part of Family
+            <i class="fas fa-plus mr-2"></i><%= t('button.add_new') %>
           </button>
         </div>
       </div>

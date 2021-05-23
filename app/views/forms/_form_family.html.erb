@@ -2,37 +2,37 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-6">
-        <label for="degreeOfKinshipInput" class="h5"><%= I18n.t('user.degree_of_kinship') %></label>
+        <label for="degreeOfKinshipInput" class="h5"><%= I18n.t('interface.steps.family.form.kinship') %></label>
         <%= f.text_field :degree_of_kinship, class: "form-control", id: "degreeOfKinshipInput", placeholder: I18n.t('user.degree_of_kinship'), required: true, value: family&.degree_of_kinship %>
       </div>
     </div>
 
     <div class="row ">
       <div class="col">
-        <label for="firstNameInput" class="h5"><%= I18n.t('user.first_name') %></label>
-        <%= f.text_field :f_first_name, class: "form-control", id: "firstNameInput", placeholder: I18n.t('user.first_name'), required: true, value: family&.f_first_name %>
+        <label for="firstNameInput" class="h5"><%= I18n.t('interface.steps.family.form.first_name') %></label>
+        <%= f.text_field :f_first_name, class: "form-control", id: "firstNameInput", placeholder: I18n.t('interface.steps.family.form.placeholder.first_name'), required: true, value: family&.f_first_name %>
       </div>
       <div class="col">
-        <label for="secondNameInput" class="h5"><%= I18n.t('user.second_name') %></label>
-        <%= f.text_field :f_second_name, class: "form-control", id: "secondNameInput", placeholder: I18n.t('user.second_name'), required: true, value: family&.f_second_name %>
+        <label for="secondNameInput" class="h5"><%= I18n.t('interface.steps.family.form.second_nae') %></label>
+        <%= f.text_field :f_second_name, class: "form-control", id: "secondNameInput", placeholder: I18n.t('interface.steps.family.form.placeholder.second_name'), required: true, value: family&.f_second_name %>
       </div>
       <div class="col">
-        <label for="lastNameInput" class="h5"><%= I18n.t('user.last_name') %></label>
-        <%= f.text_field :f_last_name, class: "form-control", id: "lastNameInput", placeholder: I18n.t('user.last_name'), required: true, value: family&.f_last_name %>
+        <label for="lastNameInput" class="h5"><%= I18n.t('interface.steps.family.form.last_name') %></label>
+        <%= f.text_field :f_last_name, class: "form-control", id: "lastNameInput", placeholder: I18n.t('interface.steps.family.form.placeholder.last_name'), required: true, value: family&.f_last_name %>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-6">
-        <label for="birthdayInput" class="h5"><%= I18n.t('user.birthday') %></label>
-        <%= f.date_field :f_birthday, class: "form-control", id: "birthdayInput", placeholder: I18n.t('user.birthday'), required: true, value: family&.f_birthday %>
+        <label for="birthdayInput" class="h5"><%= I18n.t('interface.steps.family.form.birthday') %></label>
+        <%= f.date_field :f_birthday, class: "form-control", id: "birthdayInput", placeholder: I18n.t('interface.steps.family.form.birthday'), required: true, value: family&.f_birthday %>
       </div>
     </div>
 
     <div class="row">
       <div class="col">
-        <label for="placeOfWorkInput" class="h5"><%= I18n.t('user.place_of_work') %></label>
-        <%= f.text_field :place_of_work, class: "form-control", id: "placeOfWorkInput", placeholder: I18n.t('user.place_of_work'), required: true, value: family&.place_of_work %>
+        <label for="placeOfWorkInput" class="h5"><%= I18n.t('interface.steps.family.form.study') %></label>
+        <%= f.text_field :place_of_work, class: "form-control", id: "placeOfWorkInput", placeholder: I18n.t('interface.steps.family.form.placeholder.study'), required: true, value: family&.place_of_work %>
       </div>
     </div>
   </div>

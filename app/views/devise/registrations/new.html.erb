@@ -13,7 +13,7 @@
 
 <div class="log-in-container p-3 p-sm-0">
   <div class="card m-auto text-center" style="max-width:500px">
-    <div class="h2 mb-3">Create an Account</div>
+    <div class="h2 mb-3"><%= t('interface.create_account.title') %></div>
     <div>
       <%= render 'devise/shared/error_messages' %>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { id: 'signup-form', class: 'needs-validation', method: (user_signed_in? ? :put : :post) }) do |f| %>
@@ -32,18 +32,18 @@
         </div>
         <% unless @hide_password_section %>
           <div class="field mb-3 text-left">
-            <%= f.label :password, I18n.t('interface.create_password'), class: 'h5', required: true %><br>
+            <%= f.label :password, I18n.t('interface.registration.create_password'), class: 'h5', required: true %><br>
             <div class="row" id="password_criteria">
               <div class="col-12 col-sm ml-3 mb-0">
                 <ul class="mb-0" style="padding-left: 0; padding-bottom: 0;">
-                  <li id="special">A special character</li>
-                  <li id="capital">A capital (uppercase) letter</li>
+                  <li id="special"><%= t('interface.create_account.validation.special') %></li>
+                  <li id="capital"><%= t('interface.create_account.validation.capital') %></li>
                 </ul>
               </div>
               <div class="col-12 col-sm ml-3 ml-sm-0 mt-0">
                 <ul style="padding-left: 0;">
-                  <li id="number">A number</li>
-                  <li id="length">Minimum 8 characters</li>
+                  <li id="number"><%= t('interface.create_account.validation.number') %></li>
+                  <li id="length"><%= t('interface.create_account.validation.min') %></li>
                 </ul>
               </div>
             </div>
@@ -58,17 +58,17 @@
           </div>
         <% end %>
         <div class="field mb-3 text-left phone_number_block">
-          <%= f.label :phone_number, 'Phone Number', class: 'h5' %> (Optional)<br>
+          <%= f.label :phone_number, t('user.phone_number'), class: 'h5' %> (<%= t('interface.optional') %>)<br>
           <%= f.text_field :phone_number, class: 'form-control', id: 'user_phone_number' %>
         </div>
         <div class="actions mt-3">
-          <%= f.submit 'Create Account', class: 'btn btn-primary btn-block', id: 'submit_button' %>
+          <%= f.submit t('button.create'), class: 'btn btn-primary btn-block', id: 'submit_button' %>
         </div>
       <% end %>
 
     </div>
     <div class="text-muted mt-3">
-      For help contact us at <%= mail_to('admin@support.com') %>
+      <%= t('interface.help') %> <%= mail_to('admin@support.com') %>
     </div>
   </div>
 </div>

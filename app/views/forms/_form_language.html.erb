@@ -1,8 +1,8 @@
 <div class="modal-body pt-0">
   <div class="form-group">
-    <label for="firstNameInput" class="h5"><%= I18n.t('interface.language') %></label>
+    <label for="firstNameInput" class="h5"><%= I18n.t('interface.steps.language.form.name') %></label>
     <%= f.text_field :lang_know, class: "form-control", id: "langKnowInput" %>
-    <label for="secondNameInput" class="h5"><%= I18n.t('interface.lang_level') %></label>
+    <label for="secondNameInput" class="h5"><%= I18n.t('interface.steps.language.form.level') %></label>
     <%= f.text_field :know_level, class: "form-control", id: "knowLevelInput" %>
   </div>
   <%= f.hidden_field :id, value: language&.id %>
