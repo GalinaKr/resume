@@ -31,8 +31,13 @@
 
 ua:
   interface:
+    title: 'Log In to Resume'
     hello: "Sign Up for Resume"
     help: "For help contact us at"
+    nav_bar:
+      log_out: 'Log Out'
+      message: 'Need an account?'
+      sign_up: "Sign up"
     date:
       month: "Month"
       year: "Year"
@@ -40,10 +45,28 @@ ua:
       create_password: "Create a Password"
       sign_up_with_email: "Sign Up with Email"
       sign_up_with_gemail: "Sign Up with Gmail"
+      log_in: 'Log In'
+      login_gmail: 'Log In with Gmail'
+      message:
+        remember_password: 'Remember your password?'
+        locked: "Didn't receive unlock instructions?"
+        have_account: 'Have an account?'
+    placeholder:
+      email: 'Email'
+    create_account:
+      title: 'Create an Account'
+      password: 'Create Password'
+      validation:
+        special: 'A special character'
+        capital: 'A capital (uppercase) letter'
+        number: 'A number'
+        min: 'Minimum 8 characters'
     steps:
       personal_info:
         title: "Personal information"
-        placeholder: "Users with a clear and recognizable photo are hired more often."
+        placeholder:
+          picture: "Users with a clear and recognizable photo are hired more often."
+          location: 'City'
         picture: 'Profile Picture'
         location: 'Location'
         tax: 'Personal tax number'
@@ -59,6 +82,12 @@ ua:
           last_name: 'Last Name'
           birthday: 'Day of Birth'
           study: 'Place of Study or Work'
+          placeholder:
+            kinship: 'Enter Degree of Kinship'
+            first_name: 'Enter first name'
+            second_name: 'Enter second name'
+            last_name: 'Enter last name'
+            study: 'Enter place of wor or study'
       education:
         title: "Educations"
         form:
@@ -92,21 +121,30 @@ ua:
           job: 'Enter your job title'
           location: 'City'
           description: 'Enter your job description'
-        certification:
-          title: "Licence or Certification"
-          form:
-            add_title: 'Add Licences or Certification'
-            edit_title: 'Edit Licences or Certification'
-            chose: 'Choose a licence or certification to add to your profile'
-            custom: 'Create a custom entry'
-            date: 'Date Earned'
-          language:
-            title: 'Languages'
-            form:
-              add_title: 'Add Language'
-              edit_language: 'Edit Language'
-              name: 'Language'
-              level: 'Level of Knowledge'
+      certification:
+        title: "Licence or Certification"
+        form:
+          add_title: 'Add Licences or Certification'
+          edit_title: 'Edit Licences or Certification'
+          chose: 'Choose a licence or certification to add to your profile'
+          custom: 'Create a custom entry'
+          date: 'Date Earned'
+      language:
+        title: 'Languages'
+        form:
+          add_title: 'Add Language'
+          edit_title: 'Edit Language'
+          name: 'Language'
+          level: 'Level of Knowledge'
+      work_education:
+        title: 'Work experience and education'
+        placeholder: 'Tell us about your work experience and educational background.'
+        child_title:
+          work: 'Work Experience'
+          education: 'Education'
+          certification: 'Work Licenses & Certifications'
+          language: 'Language'
+        earned: 'Earned'
       summary:
         title: "Please verify your information"
         form:
@@ -137,6 +175,7 @@ ua:
     log_out: "Log Out"
     add_new: "Add New"
     submit: "Submit Application"
+    create: 'Create Account'
   user:
     first_name: "First Name"
     second_name: "Second Name"

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="d-flex align-items-center text-white">
       <% unless user_signed_in? %>
-        Have an account? <%= link_to "Log In", new_user_session_path, class: 'btn btn-primary ml-2' %>
+        <%= t('interface.registration.message.have_account') %> <%= link_to t('interface.registration.log_in'), new_user_session_path, class: 'btn btn-primary ml-2' %>
       <% end %>
       <br /><br />
     </div>

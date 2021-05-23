@@ -31,119 +31,160 @@
 
 ru:
   interface:
-    hello: "Sign Up for Resume"
-    help: "For help contact us at"
+    title: 'Авторизуйтесь, чтобы продолжить'
+    hello: "Зарегистрируйтесь, чтобы использовать Resume"
+    help: "Для помощи - напишите нам"
+    nav_bar:
+      log_out: 'Выйти'
+      message: 'Нужен аккаунт?'
+      sign_up: "Зарегистрироваться"
     date:
-      month: "Month"
-      year: "Year"
+      month: "Месяц"
+      year: "Год"
     registration:
-      create_password: "Create a Password"
-      sign_up_with_email: "Sign Up with Email"
-      sign_up_with_gemail: "Sign Up with Gmail"
+      create_password: "Задайте пароль"
+      forgot_password: 'Забыли свой пароль?'
+      password: 'Пароль'
+      sign_up_with_email: "Зарегистрируйтесь с Email"
+      sign_up_with_gemail: "Зарегистрируйтесь с Gmail"
+      log_in: 'Авторизоваться'
+      login_gmail: 'Авторизоваться с Gmail'
+      message:
+        remember_password: 'Забыли свой пароль?'
+        locked: "Не получили инструкции по разблокировке?"
+        have_account: 'У вас есть аккаунт?'
+    placeholder:
+      email: 'Email'
+    create_account:
+      title: 'Создать аккаунт'
+      password: 'Задать пароль'
+      validation:
+        special: 'Специальный символ'
+        capital: 'Заглавная буква'
+        number: 'Число'
+        min: 'Минимум 8 символов'
     steps:
       personal_info:
-        title: "Personal information"
-        placeholder: "Users with a clear and recognizable photo are hired more often."
-        picture: 'Profile Picture'
-        location: 'Location'
-        tax: 'Personal tax number'
-        birthday: 'Date of birth'
+        title: "Персональная информация"
+        placeholder:
+          picture: "Чаще берут на работу пользователей с четкой и узнаваемой фотографией."
+          location: 'Город'
+        picture: 'Фото профиля'
+        location: 'Место расположения'
+        tax: 'ИНН'
+        birthday: 'Дата рождения'
       family:
-        title: "Family"
+        title: "Семья"
         form:
-          add_title: 'Add Family'
-          edit_title: 'Edit Family'
-          kinship: 'Degree of Kinship'
-          first_name: 'First Name'
-          second_nae: 'Second Name'
-          last_name: 'Last Name'
-          birthday: 'Day of Birth'
-          study: 'Place of Study or Work'
+          add_title: 'Добавить семью'
+          edit_title: 'Редактировать семью'
+          kinship: 'Степень родства'
+          first_name: 'Имя'
+          second_nae: 'Отчество'
+          last_name: 'Фамилия'
+          birthday: 'Дата рождения'
+          study: 'Место учебы/работы'
+          placeholder:
+            kinship: 'Введите степень родства'
+            first_name: 'Введите Имя'
+            second_name: 'Введите отчество'
+            last_name: 'Введите Фамилию'
+            study: 'Введите место учебы или работы'
       education:
-        title: "Educations"
+        title: "Образование"
         form:
-          add_title: 'Add Education'
-          edit_title: 'Edit Education'
-          institution: 'Institution'
-          cource_of_study: "Course of Study"
-          degree: "Degree"
-          graduation_year: 'Graduation Year'
-          currently_studying: "Currently Studying"
-          date_earned: "Date Earned"
-          description: 'Description'
+          add_title: 'Добавить образование'
+          edit_title: 'Редактировать образование'
+          institution: 'Институт'
+          cource_of_study: "Специальность"
+          degree: "Степень"
+          graduation_year: 'Год окончания'
+          currently_studying: "еще учусь"
+          date_earned: "Год окончания"
+          description: 'Описание'
         placeholder:
-          school: 'Enter the school you attended'
-          degree_programm: "Enter your degree program"
-          brief_description: "Enter a brief description"
+          school: 'Введите название учебного заведения'
+          degree_programm: "Введите свою программу обучения"
+          brief_description: "Введите краткое описание"
       work:
-        title: "Work Experience"
+        title: "Опыт работы"
         form:
-          add_title: 'Add a Job'
-          edit_title: 'Edit a Job'
-          company: 'Company'
-          job_title: 'Job Title'
-          location: 'Location'
-          start_date: 'Start Date'
-          end_date: 'End Date'
-          current_job: 'This is my current job'
-          description: 'Description'
+          add_title: 'Добавить место работы'
+          edit_title: 'Редактировать место работы'
+          company: 'Организация'
+          job_title: 'Должность'
+          location: 'Место расположения'
+          start_date: 'Дата трудоустройства'
+          end_date: 'Дата увольнения'
+          current_job: 'это моя текущая работа'
+          description: 'Описание'
         placeholder:
-          company: 'Enter the company name'
-          job: 'Enter your job title'
-          location: 'City'
-          description: 'Enter your job description'
-        certification:
-          title: "Licence or Certification"
-          form:
-            add_title: 'Add Licences or Certification'
-            edit_title: 'Edit Licences or Certification'
-            chose: 'Choose a licence or certification to add to your profile'
-            custom: 'Create a custom entry'
-            date: 'Date Earned'
-          language:
-            title: 'Languages'
-            form:
-              add_title: 'Add Language'
-              edit_language: 'Edit Language'
-              name: 'Language'
-              level: 'Level of Knowledge'
+          company: 'Введите название организации'
+          job: 'Введите свою должность'
+          location: 'Город'
+          description: 'Введите краткое описание должностных обязанностей'
+      certification:
+        title: "Лицензии и сертификаты"
+        form:
+          add_title: 'Добавить лицензию или сертификат'
+          edit_title: 'Редактировать лицензию или сертификат'
+          chose: 'Выберите лицензию или сертификат, чтобы добавить его к своему резюме'
+          custom: 'Создать индивидуальную запись'
+          date: 'Дата получения'
+      language:
+        title: 'Языки'
+        form:
+          add_title: 'Добавить язык'
+          edit_title: 'Редактировать язык'
+          name: 'Язык'
+          level: 'Уровень владения'
+      work_education:
+        title: 'Опыт работы и образование'
+        placeholder: 'Расскажите нам о своем опыте работы и образовании.'
+        child_title:
+          work: 'Опыт работы'
+          education: 'Образование'
+          certification: 'Лицензии и сертификаты'
+          language: 'Языки'
+        earned: 'Получен'
       summary:
-        title: "Please verify your information"
+        title: "Пожалуйста, проверьте внесенную информацию"
         form:
-          title: "Personal information"
-          phone: 'Phone number'
-          tax: 'Personal tax number'
-          professional_title: "Professional Title"
-          location: 'Location'
-          professional_summary: "Professional Summary"
+          title: "Персональная информация"
+          phone: 'Номер телефона'
+          tax: 'ИНН'
+          professional_title: "Должность"
+          location: 'Место расположения'
+          professional_summary: "Профессиональные навыки"
         placeholder:
-          profession: "e.g. Senior Analyst"
-          describe: "Describe your experience in a short elevator pitch"
+          profession: "например, Ведущий инженер"
+          describe: "Опишите коротко свой опыт."
 
-    select_an_option: "Select an option..."
+    select_an_option: "Выберите опцию..."
 
 
-    make_selection: "Please make a selection"
+    make_selection: "Пожалуйста, сделайте выбор"
 
-    optional: "optional"
+    optional: "опционально"
 
   button:
-    save_changes: "Save Changes"
-    upload_photo: "Upload photo"
-    delete: "Delete"
-    next: "Next"
-    back: "Back"
-    save: "Save"
-    log_out: "Log Out"
-    add_new: "Add New"
-    submit: "Submit Application"
+    save_changes: "Сохранить изменения"
+    upload_photo: "Загрузить фото"
+    delete: "Удалить"
+    next: "Следующий шаг"
+    back: "Назад"
+    save: "Сохранить"
+    log_out: "Выйти"
+    add_new: "Добавить"
+    submit: "Подать заявку"
+    create: 'Создать аккаунт'
   user:
-    first_name: "First Name"
-    second_name: "Second Name"
-    last_name: "Last Name"
-    phone_number: "Phone Number"
-    email: "Email"
-    location: "Location"
+    first_name: "Имя"
+    second_name: "Отчество"
+    last_name: "Фамилия"
+    phone_number: "Номер телефона"
+    email: "электронная почта"
+    location: "Место расположения"
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."

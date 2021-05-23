@@ -31,15 +31,28 @@
 
 en:
   interface:
+    title: 'Log In to Resume'
     hello: "Sign Up for Resume"
     help: "For help contact us at"
+    nav_bar:
+      log_out: 'Log Out'
+      message: 'Need an account?'
+      sign_up: "Sign up"
     date:
       month: "Month"
       year: "Year"
     registration:
       create_password: "Create a Password"
+      forgot_password: "Forgot your password?"
+      password: "Password"
       sign_up_with_email: "Sign Up with Email"
       sign_up_with_gemail: "Sign Up with Gmail"
+      log_in: 'Log In'
+      login_gmail: 'Log In with Gmail'
+      message:
+        remember_password: 'Remember your password?'
+        locked: "Didn't receive unlock instructions?"
+        have_account: 'Have an account?'
     placeholder:
       email: 'Email'
     create_account:
@@ -122,7 +135,7 @@ en:
         title: 'Languages'
         form:
           add_title: 'Add Language'
-          edit_language: 'Edit Language'
+          edit_title: 'Edit Language'
           name: 'Language'
           level: 'Level of Knowledge'
       work_education:
