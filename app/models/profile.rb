@@ -21,6 +21,10 @@ class Profile < ApplicationRecord
     @first_name ||= user.first_name
   end
 
+  def second_name
+    @second_name ||= user.second_name
+  end
+
   def last_name
     @last_name ||= user.last_name
   end
@@ -33,8 +37,16 @@ class Profile < ApplicationRecord
     @email ||= user.email
   end
 
-  def editable?(user)
-    user_id == user&.id
+  def location
+    @location ||= user.location
+  end
+
+  def personal_tax_number
+    @personal_tax_number ||= user.personal_tax_number
+  end
+
+  def phone_number
+    @phone_number ||= user.phone_number
   end
 
   private

@@ -1,0 +1,32 @@
+<!-- Education area -->
+<div class="d-flex">
+  <div class="d-flex flex-sm-row flex-column">
+    <div class="ml-sm-3 mt-1 align-self-sm-center mt-sm-0">
+      <div class="mb-4">
+        <div class="h5">
+          Education
+        </div>
+        <% if profile.profile_educations.present? %>
+          <% profile.profile_educations.order(currently_studying: :desc, graduation_year: :desc).each do |education_exp| %>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div class="w-100">
+                <div class="row">
+                  <div class="col mb-1 text text-wrap text-break"><%= education_exp.institution %></div>
+                </div>
+                <div class="row bp-text-sm">
+                  <div class="col-md text-wrap text-break"><%= education_exp.degree %>, <%= education_exp.course_of_study %></div>
+                  <div class="col-md"><%= education_exp.currently_studying.present? ? "Currently Studying" : education_exp.graduation_year %></div>
+                </div>
+              </div>
+              <%= render 'shared/edit_educations', profile_education: education_exp, redirect_reference: '' %>
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editEducationModal-<%= education_exp.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
+            </div>
+          <% end %>
+        <% end %>
+        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addEducationModal"><i class="fas fa-plus mr-2"></i>Add Education</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/add_educations' %>

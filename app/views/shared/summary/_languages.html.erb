@@ -1,0 +1,28 @@
+<!-- Language area -->
+<div class="d-flex">
+  <div class="d-flex flex-sm-row flex-column">
+    <div class="ml-sm-3 mt-1 align-self-sm-center mt-sm-0">
+      <div class="mb-5">
+        <div class="h5">
+          Languages
+        </div>
+        <% if profile.languages.present? %>
+          <% profile.languages.each do |lang| %>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div class="w-100">
+                <div class="row">
+                  <div class="col mb-1 text text-wrap text-break"><%= lang.lang_know %> - <%= lang.know_level %></div>
+                </div>
+              </div>
+              <%= render 'edit_language', language: lang %>
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editLanguageModal-<%= lang.id %>"><i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
+            </div>
+          <% end %>
+        <% end %>
+        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addLanguageModal"><i class="fas fa-plus mr-2"></i>Add Language</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/add_language' %>

@@ -1,3 +1,11 @@
-<%= render partial: 'shared/about', locals: { freelancer_profile: @profile,
-                                                         job_application: nil,
-                                                         editable: editable } %>
+<%= render partial: 'shared/summary/basic_info', locals: { profile: @profile } %>
+<% if @profile.families.any? %><hr><% end %>
+<%= render partial: 'shared/summary/family', locals: { profile: @profile } %>
+<% if @profile.profile_educations.any? %><hr><% end %>
+<%= render partial: 'shared/summary/educations', locals: { profile: @profile } %>
+<% if @profile.profile_certifications.any? %><hr><% end %>
+<%= render partial: 'shared/summary/certificates', locals: { profile: @profile } %>
+<% if @profile.profile_experiences.any? %><hr><% end %>
+<%= render partial: 'shared/summary/experiences', locals: { profile: @profile } %>
+<% if @profile.languages.any? %><hr><% end %>
+<%= render partial: 'shared/summary/languages', locals: { profile: @profile } %>

@@ -35,8 +35,8 @@
                       class: "custom-control-input #{profile_education&.currently_studying ? 'collapsed' : ''}",
                       id: "currentlyStudying-#{modal_id}",
                       type: "button",
-                      'data-bs-toggle': "collapse",
-                      'data-bs-target': "#graduationDateToggle-#{modal_id}",
+                      'data-toggle': "collapse",
+                      'data-target': "#graduationDateToggle-#{modal_id}",
                       'aria-expanded': "false",
                       'aria-controls': "graduationDateToggle-#{modal_id}",
                       checked: "#{profile_education&.currently_studying ? 'checked' : 'false'}" %>

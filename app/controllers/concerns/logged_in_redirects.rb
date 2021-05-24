@@ -2,7 +2,7 @@
 
 module LoggedInRedirects
   def current_signup_step_url
-    "#{current_path}/#{current_step}"
+    "#{current_path}"
   end
 
   def incomplete_profile_redirect
@@ -15,8 +15,7 @@ module LoggedInRedirects
 
   def save_location_path?(fullpath)
     # The following paths will have redirects after logout/login
-    %w[/employer/jobs /employer/interviews /employer/contracts /employer/account
-       /freelancer/applications /freelancer/interviews /freelancer/contracts /freelancer/profile].each do |pattern|
+    %w[/profile].each do |pattern|
       return true if fullpath.index(pattern)&.zero?
     end
     false
@@ -25,10 +24,6 @@ module LoggedInRedirects
   private
 
   def current_path
-    current_user.profile.curation
-  end
-
-  def current_step
     current_user.profile&.current_step
   end
 end

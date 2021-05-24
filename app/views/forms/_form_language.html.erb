@@ -1,0 +1,19 @@
+<div class="modal-body pt-0">
+  <div class="form-group">
+    <label for="firstNameInput" class="h5">Language</label>
+    <%= f.text_field :lang_know, class: "form-control", id: "langKnowInput" %>
+    <label for="secondNameInput" class="h5">Level of Knowlage</label>
+    <%= f.text_field :know_level, class: "form-control", id: "knowLevelInput" %>
+  </div>
+  <%= f.hidden_field :id, value: language&.id %>
+</div>
+<% if language&.id.present? %>
+  <div class="modal-footer">
+    <%= f.submit 'Save Changes', class: "btn btn-primary" %>
+    <%= f.submit 'Delete', class: "btn btn-outline-danger mr-2 d-none" %>
+  </div>
+<% else %>
+  <div class="d-flex justify-content-end m-3">
+    <%= f.submit 'Save', class: "btn btn-primary" %>
+  </div>
+<% end %>

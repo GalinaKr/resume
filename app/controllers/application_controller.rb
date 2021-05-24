@@ -2,12 +2,11 @@
 
 class ApplicationController < ActionController::Base
   include LoggedInRedirects
-  include Pagy::Backend
 
   #before_action :store_location
 
   def after_sign_in_path_for(_resource)
-    profile_steps_path(id: _resource.profile.current_step)
+    current_profile_step(_resource)
   end
 
   def after_sign_out_path_for(_resource)
@@ -18,7 +17,8 @@ class ApplicationController < ActionController::Base
 
   def current_profile_step(user)
     return profile_steps_path if user.profile.current_step.blank?
+    return profile_step_path(:summary) if user.profile.current_step == 'wicked_finish'
 
-    profile_steps_path(id: user.profile.current_step)
+    profile_step_path(id: user.profile.current_step)
   end
 end

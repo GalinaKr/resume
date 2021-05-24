@@ -4,12 +4,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title" id="postJobStep1Label">Add Licence or Certification</h1>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
       </div>
-      <%= form_for :profile_certification, url: add_certifications_path do |f| %>
-        <%= render partial: 'shared/form_certifications', locals: {profile_certification: nil, f: f} %>
+      <%= form_for :profile_certification, url: add_certification_path do |f| %>
+        <%= render partial: 'forms/form_certifications', locals: {profile_certification: nil, f: f} %>
       <% end %>
     </div>
   </div>

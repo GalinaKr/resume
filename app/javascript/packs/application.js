@@ -21,8 +21,8 @@ const images = require.context('../images', true)
 
 import $ from "jquery"
 document.addEventListener("turbolinks:load", () => {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-    $('[data-bs-toggle="popover"]').popover()
+    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="popover"]').popover()
 })
 
 require("flatpickr")

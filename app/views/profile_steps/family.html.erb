@@ -30,12 +30,12 @@
                   </div>
                 </div>
                 <%= render 'edit_family', { family: family } %>
-                <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#editFamilyModal-<%= family.id %>">
+                <button class="btn btn-link" type="button" data-toggle="modal" data-target="#editFamilyModal-<%= family.id %>">
                   <i class="fas fa-pencil-alt" style="font-size: 24px"></i></button>
               </div>
             <% end %>
           <% end %>
-          <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addFamilyModal">
+          <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addFamilyModal">
             <i class="fas fa-plus mr-2"></i>Add Part of Family
           </button>
         </div>

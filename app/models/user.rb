@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   has_many :family, dependent: :destroy
+  geocoded_by :location
+  after_validation :geocode, if: ->(obj) { obj.location.present? && obj.location_changed? }
 
   def full_name
     "#{first_name} #{second_name} #{last_name}"

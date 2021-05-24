@@ -17,12 +17,13 @@ class ProfileStepsController < ApplicationController
     @certifications = certifications
 
     save_current_step
-    personal_info_save || family_save || work_education_experience_save
+    personal_info_save || family_save || work_education_experience_save || summary_save
   end
 
   def finish_wizard_path
-    #reset_session
+    reset_session
     root_path
+    #render_wizard @user
   end
 
   def summary_save

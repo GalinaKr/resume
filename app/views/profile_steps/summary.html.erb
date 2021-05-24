@@ -8,7 +8,7 @@
       </div>
   </div>
   <div class="container bp-card">
-    <%= render partial: 'shared/summary', locals: { editable: @profile.editable?(current_user) } %>
+    <%= render partial: 'shared/summary' %>
     <hr>
     <div class="mt-3">
       <h4>Email</h4>
@@ -16,15 +16,12 @@
     </div>
     <div class="mt-4">
       <div class="d-flex">
-        <% if @profile.ready_for_submission? %>
           <div class="ml-auto">
             <%= form_for @profile, url: wizard_path, method: :put do |f| %>
-              <%= f.hidden_field :draft, value: false %>
               <%= f.submit 'Submit Application', class: 'btn btn-primary d-none d-sm-block' %>
               <%= f.submit 'Submit', class: 'btn btn-primary d-sm-none' %>
             <% end %>
           </div>
-        <% end %>
       </div>
     </div>
   </div>

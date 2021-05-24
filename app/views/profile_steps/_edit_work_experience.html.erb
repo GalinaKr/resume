@@ -3,13 +3,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="modalLabel">Edit Job</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
       </div>
 
       <%= form_for :profile_experience, url: wizard_path, method: :put do |f| %>
-        <%= render partial: 'shared/form_work_experience', locals: { profile_experience: profile_experience, f: f,
-                                                                                modal_id: profile_experience.id,
-                                                                                profile: profile } %>
+        <%= render partial: 'forms/form_work_experience', locals: { profile_experience: profile_experience, f: f,
+                                                                    modal_id: profile_experience.id,
+                                                                    profile: profile } %>
       <% end %>
     </div>
   </div>
