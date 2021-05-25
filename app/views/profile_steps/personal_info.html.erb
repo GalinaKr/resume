@@ -50,9 +50,13 @@
         </div>
 
         <div class="row">
-          <div class="col">
-            <%= f.label I18n.t :location, class: 'form-label' %>
-            <%= f.text_field :location, class: 'form-control' %>
+          <div class="col-md text-center mb-5">
+            <hr class="d-md-none mt-0">
+            <div class="form-group text-left">
+              <label for="freelancerLocationInput" class="h5">Location</label>
+              <%= f.text_field :location, class: "form-control", id: "freelancerLocationInput", placeholder: "City, State abbreviation", required: true %>
+            </div>
+            <div class="error-location text-danger mb-2"></div>
           </div>
           <div class="col">
             <%= f.label I18n.t :personal_number, class: 'form-label' %>
@@ -60,7 +64,7 @@
           </div>
           <div class="col-md text-wrap text-break">
             <%= f.label I18n.t :birthday, class: 'form-label' %>
-            <%= f.text_field :birthday, class: 'form-control' %>
+            <%= f.date_field :birthday, class: 'form-control' %>
           </div>
         </div>
 
