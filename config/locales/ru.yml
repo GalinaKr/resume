@@ -1,0 +1,249 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+ru:
+  interface:
+    title: 'Авторизуйтесь, чтобы продолжить'
+    hello: "Зарегистрируйтесь, чтобы использовать Resume"
+    help: "Для помощи - напишите нам"
+    nav_bar:
+      log_out: 'Выйти'
+      message: 'Нужен аккаунт?'
+      sign_up: "Зарегистрироваться"
+    date:
+      month: "Месяц"
+      year: "Год"
+    registration:
+      create_password: "Задайте пароль"
+      forgot_password: 'Забыли свой пароль?'
+      password: 'Пароль'
+      sign_up_with_email: "Зарегистрируйтесь с Email"
+      sign_up_with_gemail: "Зарегистрируйтесь с Gmail"
+      log_in: 'Авторизоваться'
+      login_gmail: 'Авторизоваться с Gmail'
+      message:
+        remember_password: 'Забыли свой пароль?'
+        locked: "Не получили инструкции по разблокировке?"
+        have_account: 'У вас есть аккаунт?'
+    placeholder:
+      email: 'Email'
+    create_account:
+      title: 'Создать аккаунт'
+      password: 'Задать пароль'
+      validation:
+        special: 'Специальный символ'
+        capital: 'Заглавная буква'
+        number: 'Число'
+        min: 'Минимум 8 символов'
+    steps:
+      personal_info:
+        title: "Персональная информация"
+        placeholder:
+          picture: "Чаще берут на работу пользователей с четкой и узнаваемой фотографией."
+          location: 'Город'
+        picture: 'Фото профиля'
+        location: 'Место расположения'
+        tax: 'ИНН'
+        birthday: 'Дата рождения'
+      family:
+        title: "Семья"
+        form:
+          add_title: 'Добавить семью'
+          edit_title: 'Редактировать семью'
+          kinship: 'Степень родства'
+          first_name: 'Имя'
+          second_nae: 'Отчество'
+          last_name: 'Фамилия'
+          birthday: 'Дата рождения'
+          study: 'Место учебы/работы'
+          placeholder:
+            kinship: 'Введите степень родства'
+            first_name: 'Введите Имя'
+            second_name: 'Введите отчество'
+            last_name: 'Введите Фамилию'
+            study: 'Введите место учебы или работы'
+      education:
+        title: "Образование"
+        form:
+          add_title: 'Добавить образование'
+          edit_title: 'Редактировать образование'
+          institution: 'Институт'
+          cource_of_study: "Специальность"
+          degree: "Степень"
+          graduation_year: 'Год окончания'
+          currently_studying: "еще учусь"
+          date_earned: "Год окончания"
+          description: 'Описание'
+        placeholder:
+          school: 'Введите название учебного заведения'
+          degree_programm: "Введите свою программу обучения"
+          brief_description: "Введите краткое описание"
+      work:
+        title: "Опыт работы"
+        form:
+          add_title: 'Добавить место работы'
+          edit_title: 'Редактировать место работы'
+          company: 'Организация'
+          job_title: 'Должность'
+          location: 'Место расположения'
+          start_date: 'Дата трудоустройства'
+          end_date: 'Дата увольнения'
+          current_job: 'это моя текущая работа'
+          description: 'Описание'
+        placeholder:
+          company: 'Введите название организации'
+          job: 'Введите свою должность'
+          location: 'Город'
+          description: 'Введите краткое описание должностных обязанностей'
+      certification:
+        title: "Лицензии и сертификаты"
+        form:
+          add_title: 'Добавить лицензию или сертификат'
+          edit_title: 'Редактировать лицензию или сертификат'
+          chose: 'Выберите лицензию или сертификат, чтобы добавить его к своему резюме'
+          custom: 'Создать индивидуальную запись'
+          date: 'Дата получения'
+      language:
+        title: 'Языки'
+        form:
+          add_title: 'Добавить язык'
+          edit_title: 'Редактировать язык'
+          name: 'Язык'
+          level: 'Уровень владения'
+      work_education:
+        title: 'Опыт работы и образование'
+        placeholder: 'Расскажите нам о своем опыте работы и образовании.'
+        child_title:
+          work: 'Опыт работы'
+          education: 'Образование'
+          certification: 'Лицензии и сертификаты'
+          language: 'Языки'
+        earned: 'Получен'
+      summary:
+        title: "Пожалуйста, проверьте внесенную информацию"
+        form:
+          title: "Персональная информация"
+          phone: 'Номер телефона'
+          tax: 'ИНН'
+          professional_title: "Должность"
+          location: 'Место расположения'
+          professional_summary: "Профессиональные навыки"
+        placeholder:
+          profession: "например, Ведущий инженер"
+          describe: "Опишите коротко свой опыт."
+
+    select_an_option: "Выберите опцию..."
+
+
+    make_selection: "Пожалуйста, сделайте выбор"
+
+    optional: "опционально"
+
+  button:
+    save_changes: "Сохранить изменения"
+    upload_photo: "Загрузить фото"
+    delete: "Удалить"
+    next: "Следующий шаг"
+    back: "Назад"
+    save: "Сохранить"
+    log_out: "Выйти"
+    add_new: "Добавить"
+    submit: "Подать заявку"
+    create: 'Создать аккаунт'
+  user:
+    first_name: "Имя"
+    second_name: "Отчество"
+    last_name: "Фамилия"
+    phone_number: "Номер телефона"
+    email: "электронная почта"
+    location: "Место расположения"
+  devise:
+    confirmations:
+      confirmed: "Your email address has been successfully confirmed."
+      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+    failure:
+      already_authenticated: "You are already signed in."
+      inactive: "Your account is not activated yet."
+      invalid: "Invalid %{authentication_keys} or password."
+      locked: "Your account is locked."
+      last_attempt: "You have one more attempt before your account is locked."
+      not_found_in_database: "Invalid %{authentication_keys} or password."
+      timeout: "Your session expired. Please sign in again to continue."
+      unauthenticated: "You need to sign in or sign up before continuing."
+      unconfirmed: "You have to confirm your email address before continuing."
+    mailer:
+      confirmation_instructions:
+        subject: "Confirmation instructions"
+      reset_password_instructions:
+        subject: "Reset password instructions"
+      unlock_instructions:
+        subject: "Unlock instructions"
+      email_changed:
+        subject: "Email Changed"
+      password_change:
+        subject: "Password Changed"
+    omniauth_callbacks:
+      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
+      success: "Successfully authenticated from %{kind} account."
+    passwords:
+      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+      send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
+      updated: "Your password has been changed successfully. You are now signed in."
+      updated_not_active: "Your password has been changed successfully."
+    registrations:
+      destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
+      signed_up: "Welcome! You have signed up successfully."
+      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
+      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
+      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
+      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address."
+      updated: "Your account has been updated successfully."
+      updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
+    sessions:
+      signed_in: "Signed in successfully."
+      signed_out: "Signed out successfully."
+      already_signed_out: "Signed out successfully."
+    unlocks:
+      send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
+      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+    errors:
+      messages:
+        already_confirmed: "was already confirmed, please try signing in"
+        confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+        expired: "has expired, please request a new one"
+        not_found: "not found"
+        not_locked: "was not locked"
+        not_saved:
+          one: "1 error prohibited this %{resource} from being saved:"
+          other: "%{count} errors prohibited this %{resource} from being saved:"

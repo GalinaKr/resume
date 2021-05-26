@@ -47,5 +47,6 @@ module Resume
     config.autoloader = :classic
 
     config.exceptions_app = self.routes
+    config.i18n.available_locales = %w(en ua ru)
   end
 end

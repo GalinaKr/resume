@@ -1,25 +1,25 @@
 <div class="modal-body pt-0">
 
   <div class="form-group">
-    <label for="companyInput" class="h5">Company</label>
-    <%= f.text_field :company, class: "form-control mb-1", id: "companyInput#{modal_id}", placeholder: "Enter the company name", required: true, value: profile_experience&.company %>
+    <label for="companyInput" class="h5"><%= I18n.t('interface.steps.work.form.company') %></label>
+    <%= f.text_field :company, class: "form-control mb-1", id: "companyInput#{modal_id}", placeholder: I18n.t('interface.steps.work.placeholder.company'), required: true, value: profile_experience&.company %>
     <div class="error_message_company<%= modal_id %> text-danger"></div>
   </div>
   <div class="form-group">
-    <label for="jobTitleInput" class="h5">Job Title</label>
-    <%= f.text_field :job_title, class: "form-control mb-1", id: "jobTitleInput#{modal_id}", placeholder: "Enter your job title", required: true, value: profile_experience&.job_title %>
+    <label for="jobTitleInput" class="h5"><%= I18n.t('interface.steps.work.form.job_title') %></label>
+    <%= f.text_field :job_title, class: "form-control mb-1", id: "jobTitleInput#{modal_id}", placeholder: I18n.t('interface.steps.work.placeholder.job'), required: true, value: profile_experience&.job_title %>
     <div class="error_message_job_title<%= modal_id %> text-danger"></div>
   </div>
 
   <div class="form-group">
-    <label for="experienceLocationInput<%= modal_id %>" class="h5">Location</label>
-    <%= f.text_field :location, class: "form-control", id: "experienceLocationInput#{modal_id}", placeholder: "e.g. San Francisco, CA", required: true, value: profile_experience&.location %>
+    <label for="experienceLocationInput<%= modal_id %>" class="h5"><%= I18n.t('interface.steps.work.form.location') %></label>
+    <%= f.text_field :location, class: "form-control", id: "experienceLocationInput#{modal_id}", placeholder: I18n.t('interface.steps.work.placeholder.location'), required: true, value: profile_experience&.location %>
   </div>
   <div class="error-location text-danger mb-2"></div>
   <div class="form-group">
     <div class="row mb-3">
       <div class="col-12 col-md-6 startDate<%= modal_id %>">
-        <label for="startMonth" class="h5">Start Date</label>
+        <label for="startMonth" class="h5"><%= I18n.t('interface.steps.work.form.start_date') %></label>
         <div class="row pb-1">
           <div class="col" style="padding-right: 5px;">
             <%= f.select :start_month,
@@ -29,7 +29,7 @@
                          {}, class: 'form-control selectpicker',
                          id: "startMonth-#{modal_id}",
                          'data-style': "bp-btn-select",
-                         title: "Month" %>
+                         title: I18n.t('interface.date.month') %>
           </div>
           <div class="col" style="padding-left: 5px;">
             <%= f.select :start_year,
@@ -38,13 +38,13 @@
                          {}, class: 'form-control selectpicker',
                          id: "startYear-#{modal_id}",
                          'data-style': "bp-btn-select",
-                         title: "Year" %>
+                         title: I18n.t('interface.date.year') %>
           </div>
         </div>
         <div class="error_message_start_date<%= modal_id %> text-danger"></div>
       </div>
       <div class="col-12 mt-3 col-md-6 mt-md-0 endDate<%= modal_id %> <%= profile_experience&.current_job ? 'd-none' : '' %>">
-        <label for="endMonth-<%= modal_id %>" class="h5">End Date</label>
+        <label for="endMonth-<%= modal_id %>" class="h5"><%= I18n.t('interface.steps.work.form.end_date') %></label>
         <div class="row pb-1" id="endDateToggle-<%= profile_experience&.id %>">
           <div class="col" style="padding-right: 5px;">
             <%= f.select :end_month,
@@ -53,7 +53,7 @@
                            profile_experience&.end_date&.month),
                          {}, class: 'form-control selectpicker',
                          id: "endMonth-#{modal_id}",
-                         'data-style': "bp-btn-select", title: "Month" %>
+                         'data-style': "bp-btn-select", title: I18n.t('interface.date.month') %>
           </div>
           <div class="col" style="padding-left: 5px;">
             <%= f.select :end_year,
@@ -61,7 +61,7 @@
                                             profile_experience&.end_date&.year),
                          {}, class: 'form-control selectpicker',
                          id: "endYear-#{modal_id}",
-                         'data-style': "bp-btn-select", title: "Year" %>
+                         'data-style': "bp-btn-select", title: I18n.t('interface.date.year') %>
           </div>
         </div>
         <div class="error_message_end_date<%= modal_id %> text-danger"></div>
@@ -76,26 +76,25 @@
                       'aria-controls': "endDateToggle-#{profile_experience&.id}",
                       checked: "#{profile_experience&.current_job ? 'checked' : 'false'}",
                       data: { id: modal_id } %>
-      <label class="custom-control-label" for="currentJob-<%= profile_experience&.id %>">This is
-        my current job</label>
+      <label class="custom-control-label" for="currentJob-<%= profile_experience&.id %>"><%= I18n.t('interface.steps.work.form.current_job') %></label>
     </div>
   </div>
 
   <div class="form-group mb-0">
-    <label for="jobDescriptionTextarea<%= modal_id %>" class="h5">Description</label>
-    <%= f.text_area :description, class: "form-control mb-1", id: "jobDescriptionTextarea#{modal_id}", placeholder: "Enter your job description", rows: 3, value: profile_experience&.description, maxlength: "2000" %>
+    <label for="jobDescriptionTextarea<%= modal_id %>" class="h5"><%= I18n.t('interface.steps.work.form.description') %></label>
+    <%= f.text_area :description, class: "form-control mb-1", id: "jobDescriptionTextarea#{modal_id}", placeholder: I18n.t('interface.steps.work.placeholder.description'), rows: 3, value: profile_experience&.description, maxlength: "2000" %>
     <div class="error_message_job_description<%= modal_id %> text-danger"></div>
   </div>
   <%= f.hidden_field :id, value: profile_experience&.id %>
 </div>
 <% if profile_experience&.id.present? %>
   <div class="modal-footer">
-    <%= f.submit 'Save Changes', id: "submitExperienceWithLocationCheck#{modal_id}", class: "btn btn-primary save-experience-#{modal_id}" %>
-    <%= f.submit 'Delete', class: "btn btn-outline-danger mr-2 d-none" %>
+    <%= f.submit I18n.t('button.save_changes'), id: "submitExperienceWithLocationCheck#{modal_id}", class: "btn btn-primary save-experience-#{modal_id}" %>
+    <%= f.submit I18n.t('button.delete'), class: "btn btn-outline-danger mr-2 d-none" %>
   </div>
 <% else %>
   <div class="d-flex justify-content-end m-3">
-    <%= f.submit 'Save', id: "submitExperienceWithLocationCheck#{modal_id}", class: "btn btn-primary" %>
+    <%= f.submit I18n.t('button.save'), id: "submitExperienceWithLocationCheck#{modal_id}", class: "btn btn-primary" %>
   </div>
 <% end %>
 

@@ -4,7 +4,7 @@
     <div class="ml-sm-3 mt-1 align-self-sm-center mt-sm-0">
       <div class="mb-5">
         <div class="h5">
-          Languages
+          <%= t('interface.steps.language.title') %>
         </div>
         <% if profile.languages.present? %>
           <% profile.languages.each do |lang| %>
@@ -19,7 +19,7 @@
             </div>
           <% end %>
         <% end %>
-        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addLanguageModal"><i class="fas fa-plus mr-2"></i>Add Language</button>
+        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addLanguageModal"><i class="fas fa-plus mr-2"></i><%= t('button.add_new') %></button>
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@
     <div class="ml-sm-3 mt-1 align-self-sm-center mt-sm-0">
       <div class="mb-4">
         <div class="h5">
-          Education
+          <%= t('interface.steps.work.title') %>
         </div>
         <% if profile.profile_educations.present? %>
           <% profile.profile_educations.order(currently_studying: :desc, graduation_year: :desc).each do |education_exp| %>
@@ -15,7 +15,7 @@
                 </div>
                 <div class="row bp-text-sm">
                   <div class="col-md text-wrap text-break"><%= education_exp.degree %>, <%= education_exp.course_of_study %></div>
-                  <div class="col-md"><%= education_exp.currently_studying.present? ? "Currently Studying" : education_exp.graduation_year %></div>
+                  <div class="col-md"><%= education_exp.currently_studying.present? ? t('interface.steps.education.form.currently_studying') : education_exp.graduation_year %></div>
                 </div>
               </div>
               <%= render 'shared/edit_educations', profile_education: education_exp, redirect_reference: '' %>
@@ -23,7 +23,7 @@
             </div>
           <% end %>
         <% end %>
-        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addEducationModal"><i class="fas fa-plus mr-2"></i>Add Education</button>
+        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addEducationModal"><i class="fas fa-plus mr-2"></i><%= t('button.add_new') %></button>
       </div>
     </div>
   </div>

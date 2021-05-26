@@ -1,21 +1,247 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
 ua:
-  hello: Для продовження роботи з застосунком - зареєструйтеся
-  profile: Профіль
-  personal_information: Особиста інформація
-  info_about_family: Родина
-  user_first_name: Им'я
-  user_second_name: Побатькові
-  user_last_name: Прізвище
-  phone_number: Номер телефону
-  email: Адреса електронної пошти
-  upload_photo: Завантажити фотографію
-  delete: Видалити
-  next: Наступний крок
-  sign_up_with_email: Використати email
-  sign_up_with_gemail: Реєстрація з Gmail
-  change_last_name: Зміна Прізвища, імені, по-батькові
-  date_of_change_name: Дата зміни Прізвища, імені, по-батькові
-  reason_of_change_name: Причина
-  degree_of_kinship: Ступінь споріднення
-  place_of_work: Місце навчання або роботи
-  birthday: Дата народження
+  interface:
+    title: 'Log In to Resume'
+    hello: "Sign Up for Resume"
+    help: "For help contact us at"
+    nav_bar:
+      log_out: 'Log Out'
+      message: 'Need an account?'
+      sign_up: "Sign up"
+    date:
+      month: "Month"
+      year: "Year"
+    registration:
+      create_password: "Create a Password"
+      sign_up_with_email: "Sign Up with Email"
+      sign_up_with_gemail: "Sign Up with Gmail"
+      log_in: 'Log In'
+      login_gmail: 'Log In with Gmail'
+      message:
+        remember_password: 'Remember your password?'
+        locked: "Didn't receive unlock instructions?"
+        have_account: 'Have an account?'
+    placeholder:
+      email: 'Email'
+    create_account:
+      title: 'Create an Account'
+      password: 'Create Password'
+      validation:
+        special: 'A special character'
+        capital: 'A capital (uppercase) letter'
+        number: 'A number'
+        min: 'Minimum 8 characters'
+    steps:
+      personal_info:
+        title: "Personal information"
+        placeholder:
+          picture: "Users with a clear and recognizable photo are hired more often."
+          location: 'City'
+        picture: 'Profile Picture'
+        location: 'Location'
+        tax: 'Personal tax number'
+        birthday: 'Date of birth'
+      family:
+        title: "Family"
+        form:
+          add_title: 'Add Family'
+          edit_title: 'Edit Family'
+          kinship: 'Degree of Kinship'
+          first_name: 'First Name'
+          second_nae: 'Second Name'
+          last_name: 'Last Name'
+          birthday: 'Day of Birth'
+          study: 'Place of Study or Work'
+          placeholder:
+            kinship: 'Enter Degree of Kinship'
+            first_name: 'Enter first name'
+            second_name: 'Enter second name'
+            last_name: 'Enter last name'
+            study: 'Enter place of wor or study'
+      education:
+        title: "Educations"
+        form:
+          add_title: 'Add Education'
+          edit_title: 'Edit Education'
+          institution: 'Institution'
+          cource_of_study: "Course of Study"
+          degree: "Degree"
+          graduation_year: 'Graduation Year'
+          currently_studying: "Currently Studying"
+          date_earned: "Date Earned"
+          description: 'Description'
+        placeholder:
+          school: 'Enter the school you attended'
+          degree_programm: "Enter your degree program"
+          brief_description: "Enter a brief description"
+      work:
+        title: "Work Experience"
+        form:
+          add_title: 'Add a Job'
+          edit_title: 'Edit a Job'
+          company: 'Company'
+          job_title: 'Job Title'
+          location: 'Location'
+          start_date: 'Start Date'
+          end_date: 'End Date'
+          current_job: 'This is my current job'
+          description: 'Description'
+        placeholder:
+          company: 'Enter the company name'
+          job: 'Enter your job title'
+          location: 'City'
+          description: 'Enter your job description'
+      certification:
+        title: "Licence or Certification"
+        form:
+          add_title: 'Add Licences or Certification'
+          edit_title: 'Edit Licences or Certification'
+          chose: 'Choose a licence or certification to add to your profile'
+          custom: 'Create a custom entry'
+          date: 'Date Earned'
+      language:
+        title: 'Languages'
+        form:
+          add_title: 'Add Language'
+          edit_title: 'Edit Language'
+          name: 'Language'
+          level: 'Level of Knowledge'
+      work_education:
+        title: 'Work experience and education'
+        placeholder: 'Tell us about your work experience and educational background.'
+        child_title:
+          work: 'Work Experience'
+          education: 'Education'
+          certification: 'Work Licenses & Certifications'
+          language: 'Language'
+        earned: 'Earned'
+      summary:
+        title: "Please verify your information"
+        form:
+          title: "Personal information"
+          phone: 'Phone number'
+          tax: 'Personal tax number'
+          professional_title: "Professional Title"
+          location: 'Location'
+          professional_summary: "Professional Summary"
+        placeholder:
+          profession: "e.g. Senior Analyst"
+          describe: "Describe your experience in a short elevator pitch"
+
+    select_an_option: "Select an option..."
+
+
+    make_selection: "Please make a selection"
+
+    optional: "optional"
+
+  button:
+    save_changes: "Save Changes"
+    upload_photo: "Upload photo"
+    delete: "Delete"
+    next: "Next"
+    back: "Back"
+    save: "Save"
+    log_out: "Log Out"
+    add_new: "Add New"
+    submit: "Submit Application"
+    create: 'Create Account'
+  user:
+    first_name: "First Name"
+    second_name: "Second Name"
+    last_name: "Last Name"
+    phone_number: "Phone Number"
+    email: "Email"
+    location: "Location"
+  devise:
+    confirmations:
+      confirmed: "Your email address has been successfully confirmed."
+      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+    failure:
+      already_authenticated: "You are already signed in."
+      inactive: "Your account is not activated yet."
+      invalid: "Invalid %{authentication_keys} or password."
+      locked: "Your account is locked."
+      last_attempt: "You have one more attempt before your account is locked."
+      not_found_in_database: "Invalid %{authentication_keys} or password."
+      timeout: "Your session expired. Please sign in again to continue."
+      unauthenticated: "You need to sign in or sign up before continuing."
+      unconfirmed: "You have to confirm your email address before continuing."
+    mailer:
+      confirmation_instructions:
+        subject: "Confirmation instructions"
+      reset_password_instructions:
+        subject: "Reset password instructions"
+      unlock_instructions:
+        subject: "Unlock instructions"
+      email_changed:
+        subject: "Email Changed"
+      password_change:
+        subject: "Password Changed"
+    omniauth_callbacks:
+      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
+      success: "Successfully authenticated from %{kind} account."
+    passwords:
+      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+      send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
+      updated: "Your password has been changed successfully. You are now signed in."
+      updated_not_active: "Your password has been changed successfully."
+    registrations:
+      destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
+      signed_up: "Welcome! You have signed up successfully."
+      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
+      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
+      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
+      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address."
+      updated: "Your account has been updated successfully."
+      updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
+    sessions:
+      signed_in: "Signed in successfully."
+      signed_out: "Signed out successfully."
+      already_signed_out: "Signed out successfully."
+    unlocks:
+      send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
+      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+    errors:
+      messages:
+        already_confirmed: "was already confirmed, please try signing in"
+        confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+        expired: "has expired, please request a new one"
+        not_found: "not found"
+        not_locked: "was not locked"
+        not_saved:
+          one: "1 error prohibited this %{resource} from being saved:"
+          other: "%{count} errors prohibited this %{resource} from being saved:"

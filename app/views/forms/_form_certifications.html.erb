@@ -1,13 +1,13 @@
 <div class="modal-body pt-0 pb-0">
   <label for="exampleFormControlMultiSelect" class="h5">
-    Licence or Certification
+    <%= I18n.t('interface.steps.certification.form.add_title') %>
   </label>
   <div id="descriptionCertification" class="collapse multi-collapse <%= profile_certification&.certification&.custom? ? '' : 'show' %>">
-    <div class="form-group mb-2 descriptionCertification-<%= profile_certification&.id %>">
+    <div class="form-group mb-2 de'scriptionCertification-<%= profile_certification&.id %>">
       <%= f.select :certification_id,
                    options_for_select(@certifications, [profile_certification&.description, profile_certification&.certification_id]),
-                   {}, class: 'form-control selectpicker', id: "descriptionCertification-#{profile_certification&.id}", 'data-style': "bp-btn-select", title: "Select an option..." %>
-      <div class="error_description text-danger mt-1"></div>
+                   {}, class: 'form-control selectpicker', id: "descriptionCertification-#{profile_certification&.id}", 'data-style': "bp-btn-select", title: I18n.t('interface.select_an_option') %>
+      <div class="error_descriptio'n text-danger mt-1"></div>
     </div>
   </div>
   <div id="customDescriptionCertification" class="collapse multi-collapse <%= profile_certification&.certification&.custom? ? 'show' : '' %>">
@@ -30,24 +30,24 @@
                     'aria-expanded': "false",
                     'aria-controls': "descriptionCertification customDescriptionCertification",
                     checked: "#{profile_certification&.certification&.custom? ? 'checked' : 'false'}" %>
-    <label class="custom-control-label" for="editCertificationCustom-<%=profile_certification&.id %>">Create a custom entry</label>
+    <label class="custom-control-label" for="editCertificationCustom-<%=profile_certification&.id %>"><%= I18n.t('interface.steps.certification.form.custom') %></label>
   </div>
 
   <div class="form-group">
-    <label for="earnedMonth-<%= profile_certification&.id %>" class="h5">Date Earned</label>
+    <label for="earnedMonth-<%= profile_certification&.id %>" class="h5"><%= I18n.t('interface.steps.education.form.date_earned') %></label>
     <div class="row">
       <div class="col earnedMonth-<%= profile_certification&.id %>">
         <%= f.select :earned_month,
                      options_for_select(select_months_array, profile_certification&.earned&.month),
                      {}, class: 'form-control selectpicker',
-                     id: "earnedMonth-#{profile_certification&.id}", 'data-style': "bp-btn-select", title: "Month" %>
+                     id: "earnedMonth-#{profile_certification&.id}", 'data-style': "bp-btn-select", title: I18n.t('interface.date.month') %>
         <div class="error_month text-danger mt-1"></div>
       </div>
       <div class="col earnedYear-<%= profile_certification&.id %>">
         <%= f.select :earned_year,
                      options_for_select(ProfileCertification::AVAILABLE_YEARS, profile_certification&.earned&.year),
                      {}, class: 'form-control selectpicker',
-                     id: "earnedYear-#{profile_certification&.id}", 'data-style': "bp-btn-select", title: "Year" %>
+                     id: "earnedYear-#{profile_certification&.id}", 'data-style': "bp-btn-select", title: I18n.t('interface.date.year') %>
         <div class="error_year text-danger mt-1"></div>
       </div>
     </div>
@@ -56,12 +56,12 @@
 </div>
 <% if profile_certification&.id&.present? %>
   <div class="modal-footer">
-    <%= f.submit 'Delete', class: "btn btn-outline-danger mr-2 d-none" %>
-    <%= f.submit 'Save Changes', class: "btn btn-primary float-right submitCertification#{profile_certification&.id}" %>
+    <%= f.submit I18n.t('button.delete'), class: "btn btn-outline-danger mr-2 d-none" %>
+    <%= f.submit I18n.t('button.save_changes'), class: "btn btn-primary float-right submitCertification#{profile_certification&.id}" %>
   </div>
 <% else %>
   <div class="d-flex justify-content-end m-3 mt-4">
-    <%= f.submit 'Save Changes', class: 'btn btn-primary submitCertification' %>
+    <%= f.submit I18n.t('button.save'), class: 'btn btn-primary submitCertification' %>
   </div>
 <% end %>
 <%= render partial: 'shared/certification_validations', locals: { profile: @profile, profile_certification: profile_certification } %>

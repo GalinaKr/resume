@@ -4,7 +4,7 @@
     <div class="ml-sm-3 mt-1 align-self-sm-center mt-sm-0">
       <div class="mb-5">
         <div class="h5">
-          Family
+          <%= t('interface.steps.family.title') %>>
         </div>
         <% if profile.families.present? %>
           <% profile.families.order(f_birthday: :asc).each do |family| %>
@@ -23,7 +23,7 @@
             </div>
           <% end %>
         <% end %>
-        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addFamilyModal"><i class="fas fa-plus mr-2"></i>Add New</button>
+        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addFamilyModal"><i class="fas fa-plus mr-2"></i><%= t('button.add_new') %></button>
       </div>
     </div>
   </div>

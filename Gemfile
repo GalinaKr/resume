@@ -25,6 +25,7 @@ gem 'table_print', '~> 1.5', '>= 1.5.7'     # Allows viewing of data in console 
 gem 'turbolinks', '~> 5'                    # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'webpacker', '~> 5.2', '>= 5.2.1'       # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'wicked', '~> 1.3', '>= 1.3.2'          # Wicked is a Rails engine for producing easy wizard controllers
+gem 'http_accept_language'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
