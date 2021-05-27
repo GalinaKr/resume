@@ -10,6 +10,12 @@ class DegreeOfKinship < ApplicationRecord
   translates :description
 
   def description
-    translation_for(:description)
+    if I18n.locale == :en
+      @description ||= families[0].degree_of_kinship.description_en
+    elsif I18n.locale == :ru
+      @description ||= families[0].degree_of_kinship.description_ru
+    else
+      @description ||= families[0].degree_of_kinship.description_ua
+    end
   end
 end
