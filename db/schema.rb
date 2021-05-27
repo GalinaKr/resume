@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_22_072101) do
+ActiveRecord::Schema.define(version: 2021_05_27_081614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,14 @@ ActiveRecord::Schema.define(version: 2021_05_22_072101) do
     t.index ["user_id"], name: "index_changes_in_names_on_user_id"
   end
 
+  create_table "degree_of_kinships", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "description_en"
+    t.string "description_ru"
+    t.string "description_ua"
+  end
+
   create_table "families", force: :cascade do |t|
     t.string "f_first_name"
     t.string "f_second_name"
@@ -75,6 +83,8 @@ ActiveRecord::Schema.define(version: 2021_05_22_072101) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.bigint "profile_id"
+    t.bigint "degree_of_kinship_id"
+    t.index ["degree_of_kinship_id"], name: "index_families_on_degree_of_kinship_id"
     t.index ["profile_id"], name: "index_families_on_profile_id"
     t.index ["user_id"], name: "index_families_on_user_id"
   end
@@ -175,6 +185,7 @@ ActiveRecord::Schema.define(version: 2021_05_22_072101) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "changes_in_names", "users"
+  add_foreign_key "families", "degree_of_kinships"
   add_foreign_key "families", "profiles"
   add_foreign_key "families", "users"
   add_foreign_key "languages", "profiles"

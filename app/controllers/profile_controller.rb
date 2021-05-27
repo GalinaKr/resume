@@ -8,6 +8,8 @@ class ProfileController < ApplicationController
 
   def show
     certifications
+    degree_of_kinships
+
     @profile = Profile.lookup(params[:slug])
   end
 
