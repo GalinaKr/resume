@@ -2,6 +2,6 @@
 
 module ApplicationHelper
   def select_months_array
-    ProfileExperience::AVAILABLE_MONTHNAMES.each_with_index.collect { |m, i| [m, i+1] }
+    ProfileExperience::AVAILABLE_MONTHNAMES.each_with_index.collect { |m, i| [ I18n.t(m), i+1] }
   end
 end
