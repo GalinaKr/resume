@@ -173,8 +173,6 @@ ActiveRecord::Schema.define(version: 2021_05_27_081614) do
     t.datetime "remember_created_at"
     t.string "personal_tax_number"
     t.date "birthday"
-    t.string "uid"
-    t.string "provider"
     t.float "latitude"
     t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
