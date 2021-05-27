@@ -25,13 +25,13 @@ if DegreeOfKinship.none?
                            { description_en: 'Grand father', description_ru: 'Дед', description_ua: 'Дід' },
                            { description_en: 'Husband', description_ru: 'Муж', description_ua: 'Чоловік' },
                            { description_en: 'Wife', description_ru: 'Жена', description_ua: 'Дружина' },
-                           { description_en: 'Son', description_ru: 'Сін', description_ua: 'Син' },
+                           { description_en: 'Son', description_ru: 'Сын', description_ua: 'Син' },
                            { description_en: 'Doter', description_ru: 'Дочь', description_ua: 'Дочка' },
                            { description_en: 'Step mother', description_ru: 'Мачеха', description_ua: 'Мачуха' },
                            { description_en: 'Step father', description_ru: 'Отчим', description_ua: 'Відчим' },
-                           { description_en: 'Step son', description_ru: 'Пасінок', description_ua: 'Пасинок' },
+                           { description_en: 'Step son', description_ru: 'Пасынок', description_ua: 'Пасинок' },
                            { description_en: 'Step doter', description_ru: 'Падчерица', description_ua: 'Падчерка' },
-                           { description_en: 'Adopted', description_ru: 'Усіновлен', description_ua: 'Всиновлений' },
+                           { description_en: 'Adopted', description_ru: 'Усыновлен', description_ua: 'Всиновлений' },
                            { description_en: 'Guardian', description_ru: 'Опекун', description_ua: 'Опікун' }
                          ])
 end
