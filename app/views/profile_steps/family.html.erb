@@ -18,7 +18,7 @@
         </div>
         <div class="mb-4">
           <% if @profile.families.present? %>
-            <% @profile.families.order(f_birthday: :desc).each do |family| %>
+            <% @profile.families.order(f_birthday: :asc).each do |family| %>
               <div class="d-flex mb-3">
                 <div class="w-100">
                   <div class="row">
