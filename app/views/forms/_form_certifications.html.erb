@@ -3,11 +3,11 @@
     <%= I18n.t('interface.steps.certification.form.add_title') %>
   </label>
   <div id="descriptionCertification" class="collapse multi-collapse <%= profile_certification&.certification&.custom? ? '' : 'show' %>">
-    <div class="form-group mb-2 de'scriptionCertification-<%= profile_certification&.id %>">
+    <div class="form-group mb-2 descriptionCertification-<%= profile_certification&.id %>">
       <%= f.select :certification_id,
                    options_for_select(@certifications, [profile_certification&.description, profile_certification&.certification_id]),
                    {}, class: 'form-control selectpicker', id: "descriptionCertification-#{profile_certification&.id}", 'data-style': "bp-btn-select", title: I18n.t('interface.select_an_option') %>
-      <div class="error_descriptio'n text-danger mt-1"></div>
+      <div class="error_description text-danger mt-1"></div>
     </div>
   </div>
   <div id="customDescriptionCertification" class="collapse multi-collapse <%= profile_certification&.certification&.custom? ? 'show' : '' %>">

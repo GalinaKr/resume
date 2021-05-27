@@ -3,6 +3,8 @@ class ProfileStepsController < ApplicationController
   include AddFamily
   include WorkEducationExperience
   include WorkCertification
+  include Translatable
+
   steps :personal_info, :family, :work_education_experience, :summary
   before_action :set_user, :set_profile
 
@@ -15,6 +17,7 @@ class ProfileStepsController < ApplicationController
 
   def update
     @certifications = certifications
+    @degree_of_kinships = degree_of_kinships
 
     save_current_step
     personal_info_save || family_save || work_education_experience_save || summary_save
@@ -89,7 +92,12 @@ class ProfileStepsController < ApplicationController
     @certifications ||= Certification.pluck(:description, :id)
   end
 
+  def degree_of_kinships
+    @degree_of_kinships ||= DegreeOfKinship.pluck(translation_for(:description), :id)
+  end
+
   def populate_available_options_for_data
     certifications
+    degree_of_kinships
   end
 end

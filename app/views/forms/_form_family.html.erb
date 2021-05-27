@@ -3,8 +3,14 @@
     <div class="row">
       <div class="col-md-6">
         <label for="degreeOfKinshipInput" class="h5"><%= I18n.t('interface.steps.family.form.kinship') %></label>
-        <%= f.text_field :degree_of_kinship, class: "form-control", id: "degreeOfKinshipInput", placeholder: I18n.t('interface.steps.family.form.placeholder.kinship'), required: true, value: family&.degree_of_kinship %>
+        <div class="form-group mb-2 descriptionDegreeOfKinship-<%= family&.id %>">
+          <%= f.select :degree_of_kinship_id,
+                       options_for_select(@degree_of_kinships, [family&.id, family&.degree_of_kinship_id]),
+                       {}, class: 'form-control selectpicker', id: "descriptionDegreeOfKinship-#{family&.id}", 'data-style': "bp-btn-select", title: I18n.t('interface.select_an_option') %>
+          <div class="error_description text-danger mt-1"></div>
+        </div>
       </div>
+
     </div>
 
     <div class="row ">
