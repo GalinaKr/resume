@@ -59,11 +59,11 @@
             <div class="error-location text-danger mb-2"></div>
           </div>
           <div class="col">
-            <%= f.label t('user.personal_number'), class: 'form-label' %>
+            <%= f.label I18n.t('interface.steps.personal_info.tax'), class: 'form-label' %>
             <%= f.text_field :personal_tax_number, class: 'form-control' %>
           </div>
           <div class="col-md text-wrap text-break">
-            <%= f.label t('user.birthday'), class: 'form-label' %>
+            <%= f.label I18n.t('interface.steps.personal_info.birthday'), class: 'form-label' %>
             <%= f.date_field :birthday, class: 'form-control' %>
           </div>
         </div>
