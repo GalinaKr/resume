@@ -10,7 +10,7 @@ class ProfileExperience < ApplicationRecord
   validate :end_date_is_after_start_date
 
   AVAILABLE_YEARS = (1970..Time.now.year).reverse_each
-  AVAILABLE_MONTHNAMES = I18n.t Date::MONTHNAMES.drop(1)
+  AVAILABLE_MONTHNAMES = Date::MONTHNAMES.drop(1)
 
   geocoded_by :location
   after_validation :geocode, if: ->(obj) { obj.location.present? && obj.location_changed? }
