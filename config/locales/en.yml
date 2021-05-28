@@ -102,19 +102,6 @@ en:
           currently_studying: "Currently Studying"
           date_earned: "Date Earned"
           description: 'Description'
-        degree:
-          bs: 'Bachelor of Science'
-          ba: 'Bachelor of Arts'
-          masters: 'Masters'
-          phd: 'Doctor of Philosophy'
-          ad: 'Doctor of Arts'
-          sd: 'Doctor of Science'
-          ihe: 'Incomplete higher education'
-          ise: 'Incomplete secondary education'
-          elementary: 'Elementary'
-          ve: 'Vocational education'
-          specialist: 'Specialist'
-          courses: 'Courses'
         form_education:
           on_the_job: 'On-the-job'
           out_of_production: 'Out of production'
@@ -162,14 +149,6 @@ en:
           edit_title: 'Edit Language'
           name: 'Language'
           level: 'Level of Knowledge'
-        level:
-          native: 'Native'
-          a1: 'A1 (Beginner)'
-          a2: 'A2 (Elementary)'
-          b1: 'B1 (Intermediate)'
-          b2: 'B2 (Upper-Intermediate)'
-          c1: 'C1 (Advanced)'
-          c2: 'C2 (Proficiency)'
         placeholder:
           name: 'Input language'
           level: 'Select level'

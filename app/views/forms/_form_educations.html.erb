@@ -6,11 +6,12 @@
   </div>
   <div class="form-group">
     <label for="DegreeSelect" class="h5"><%= I18n.t('interface.steps.education.form.degree') %></label>
-    <%= f.select :degree,
-                 options_for_select(ProfileEducation.degrees.keys, profile_education&.degree),
-                 {}, class: 'form-control selectpicker mb-1',
-                 id: "degreeSelect-#{modal_id}", 'data-style': "bp-btn-select",
-                 title: I18n.t('interface.make_selection') %>
+    <%= f.select :degree_id,
+                 options_for_select(@degrees, [profile_education&.description, profile_education&.degree_id]),
+                 {}, class: 'form-control selectpicker',
+                 id: "descriptionDegree-#{profile_education&.id}",
+                 'data-style': "bp-btn-select",
+                 title: I18n.t('interface.select_an_option') %>
     <div class="error_message_degree-<%= modal_id %> text-danger"></div>
   </div>
   <div class="form-group">
@@ -29,14 +30,14 @@
       <div class="error_message_graduation-<%= modal_id %> text-danger"></div>
       </div>
       <div class="col">
-        <%= f.select :form_education,
-                     options_for_select(ProfileEducation.form_educations.keys, profile_education&.form_education),
-                     {}, class: 'form-control selectpicker mb-1',
-                     id: "formEducationSelect-#{modal_id}", 'data-style': "bp-btn-select",
-                     title: I18n.t('interface.make_selection') %>
+        <%= f.select :form_of_education_id,
+                     options_for_select(@form_of_educations, [profile_education&.description, profile_education&.form_of_education_id]),
+                     {}, class: 'form-control selectpicker',
+                     id: "descriptionFormEducation-#{profile_education&.id}",
+                     'data-style': "bp-btn-select",
+                     title: I18n.t('interface.select_an_option') %>
       </div>
     </div>
-
 
     <div class="custom-control custom-checkbox">
       <%= f.check_box :currently_studying,

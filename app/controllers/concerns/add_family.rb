@@ -12,7 +12,7 @@ module AddFamily
   private
 
   def family_options
-    if family.present? && params[:commit] == 'Delete'
+    if family.present? && params[:commit] == t('button.delete')
       family.destroy
     elsif family.present?
       family.update(family_params)
