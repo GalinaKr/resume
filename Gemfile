@@ -26,6 +26,7 @@ gem 'turbolinks', '~> 5'                    # Turbolinks makes navigating your w
 gem 'webpacker', '~> 5.2', '>= 5.2.1'       # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'wicked', '~> 1.3', '>= 1.3.2'          # Wicked is a Rails engine for producing easy wizard controllers
 gem 'http_accept_language'
+gem 'prawn', '~> 2.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
