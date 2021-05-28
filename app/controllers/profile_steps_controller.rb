@@ -18,6 +18,9 @@ class ProfileStepsController < ApplicationController
   def update
     @certifications = certifications
     @degree_of_kinships = degree_of_kinships
+    @form_of_educations = form_of_educations
+    @degrees = degrees
+    @language_levels = language_levels
 
     save_current_step
     personal_info_save || family_save || work_education_experience_save || summary_save
@@ -96,8 +99,23 @@ class ProfileStepsController < ApplicationController
     @degree_of_kinships ||= DegreeOfKinship.pluck(translation_for(:description), :id)
   end
 
+  def form_of_educations
+    @form_of_educations ||= FormOfEducation.pluck(translation_for(:description), :id)
+  end
+
+  def degrees
+    @degrees ||= Degree.pluck(translation_for(:description), :id)
+  end
+
+  def language_levels
+    @language_levels ||= LanguageLevel.pluck(translation_for(:description), :id)
+  end
+
   def populate_available_options_for_data
     certifications
     degree_of_kinships
+    form_of_educations
+    degrees
+    language_levels
   end
 end

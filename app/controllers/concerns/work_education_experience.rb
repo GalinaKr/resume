@@ -10,7 +10,7 @@ module WorkEducationExperience
   def work_experience_save
     return unless params[:profile_experience].present?
 
-    if work_profile_experience.present? && params[:commit] == 'Delete'
+    if work_profile_experience.present? && params[:commit] == t('button.delete')
       work_profile_experience.destroy
     elsif work_profile_experience.present?
       unless work_profile_experience.update(checked_profile_experience_params)
@@ -25,7 +25,7 @@ module WorkEducationExperience
   def language_save
     return unless params[:language].present?
 
-    if language.present? && params[:commit] == 'Delete'
+    if language.present? && params[:commit] == t('button.delete')
       language.destroy
     elsif language.present?
       unless language.update(language_params)
@@ -40,7 +40,7 @@ module WorkEducationExperience
   private
 
   def education_options
-    if education_profile_experience.present? && params[:commit] == 'Delete'
+    if education_profile_experience.present? && params[:commit] == t('button.delete')
       education_profile_experience.destroy
     elsif education_profile_experience.present?
       education_profile_experience.update(checked_profile_education_params)
@@ -57,11 +57,15 @@ module WorkEducationExperience
 
   def profile_education_params
     params.require(:profile_education)
-          .permit(:id, :institution, :degree, :course_of_study, :graduation_year, :currently_studying, :description)
+          .permit(:id, :institution, :course_of_study, :graduation_year, :currently_studying, :description).
+      merge(degree_id: degree_params).
+      merge(form_of_education_id: form_of_education_params)
   end
 
   def language_params
-    params.require(:language).permit(:id, :lang_know, :know_level).merge(profile_id: @profile.id)
+    params.require(:language).permit(:id, :lang_know).
+      merge(profile_id: @profile.id).
+      merge(language_level_id: language_level_params)
   end
 
   def checked_profile_education_params
@@ -104,5 +108,17 @@ module WorkEducationExperience
 
   def language
     @language ||= @profile&.languages&.find_by(id: params[:language][:id])
+  end
+
+  def language_level_params
+    params[:language][:language_level_id]
+  end
+
+  def degree_params
+    params[:profile_education][:degree_id]
+  end
+
+  def form_of_education_params
+    params[:profile_education][:form_of_education_id]
   end
 end

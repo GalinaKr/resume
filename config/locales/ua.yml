@@ -102,7 +102,7 @@ ua:
           description: 'Description'
         placeholder:
           school: 'Enter the school you attended'
-          degree_programm: "Enter your degree program"
+          degree_programm: "Enter your degreeprogram"
           brief_description: "Enter a brief description"
       work:
         title: "Work Experience"
@@ -136,6 +136,9 @@ ua:
           edit_title: 'Edit Language'
           name: 'Language'
           level: 'Level of Knowledge'
+        placeholder:
+          name: 'Введіть мову, якою ви володієте'
+          level: 'Оберіть рівень володіння'
       work_education:
         title: 'Work experience and education'
         placeholder: 'Tell us about your work experience and educational background.'
@@ -157,14 +160,9 @@ ua:
         placeholder:
           profession: "e.g. Senior Analyst"
           describe: "Describe your experience in a short elevator pitch"
-
     select_an_option: "Select an option..."
-
-
     make_selection: "Please make a selection"
-
     optional: "optional"
-
   button:
     save_changes: "Save Changes"
     upload_photo: "Upload photo"

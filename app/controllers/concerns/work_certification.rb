@@ -10,7 +10,7 @@ module WorkCertification
   private
 
   def profile_certification_options
-    if profile_certification.present? && params[:commit] == 'Delete'
+    if profile_certification.present? && params[:commit] == t('button.delete')
       profile_certification.destroy
     elsif profile_certification.present?
       profile_certification_update
