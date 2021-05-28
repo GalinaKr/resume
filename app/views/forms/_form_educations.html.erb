@@ -28,8 +28,16 @@
                      id: "graduationYear-#{modal_id}", 'data-style': "bp-btn-select", title: I18n.t('interface.date.year') %>
       <div class="error_message_graduation-<%= modal_id %> text-danger"></div>
       </div>
-      <div class="col"></div>
+      <div class="col">
+        <%= f.select :form_education,
+                     options_for_select(ProfileEducation.form_educations.keys, profile_education&.form_education),
+                     {}, class: 'form-control selectpicker mb-1',
+                     id: "formEducationSelect-#{modal_id}", 'data-style': "bp-btn-select",
+                     title: I18n.t('interface.make_selection') %>
+      </div>
     </div>
+
+
     <div class="custom-control custom-checkbox">
       <%= f.check_box :currently_studying,
                       class: "custom-control-input #{profile_education&.currently_studying ? 'collapsed' : ''}",

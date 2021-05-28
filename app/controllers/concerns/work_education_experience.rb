@@ -57,11 +57,11 @@ module WorkEducationExperience
 
   def profile_education_params
     params.require(:profile_education)
-          .permit(:id, :institution, :degree, :course_of_study, :graduation_year, :currently_studying, :description)
+          .permit(:id, :institution, :degree, :course_of_study, :graduation_year, :currently_studying, :description, :form_education)
   end
 
   def language_params
-    params.require(:language).permit(:id, :lang_know, :know_level).merge(profile_id: @profile.id)
+    params.require(:language).permit(:id, :lang_know, :level).merge(profile_id: @profile.id)
   end
 
   def checked_profile_education_params

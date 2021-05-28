@@ -1,9 +1,17 @@
 <div class="modal-body pt-0">
   <div class="form-group">
     <label for="firstNameInput" class="h5"><%= I18n.t('interface.steps.language.form.name') %></label>
-    <%= f.text_field :lang_know, class: "form-control", id: "langKnowInput" %>
-    <label for="secondNameInput" class="h5"><%= I18n.t('interface.steps.language.form.level') %></label>
-    <%= f.text_field :know_level, class: "form-control", id: "knowLevelInput" %>
+    <%= f.text_field :lang_know, class: "form-control", id: "langKnowInput",
+                     placeholder: t('interface.steps.language.placeholder.name'),
+                     value: language&.lang_know %>
+  </div>
+  <div class="form-group">
+    <label for="DegreeSelect" class="h5"><%= t('interface.steps.language.form.level') %></label>
+    <%= f.select :level,
+                 options_for_select(Language.levels.keys, language&.level),
+                 {}, class: 'form-control selectpicker mb-1',
+                 id: "languageSelect", 'data-style': "bp-btn-select",
+                 title: I18n.t('interface.steps.language.placeholder.level') %>
   </div>
   <%= f.hidden_field :id, value: language&.id %>
 </div>

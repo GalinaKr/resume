@@ -55,7 +55,7 @@
                 <div class="col mb-1 text text-wrap text-break"><%= education_exp.institution %></div>
               </div>
               <div class="row bp-text-sm">
-                <div class="col-md text-wrap text-break"><%= education_exp.degree %>, <%= education_exp.course_of_study %></div>
+                <div class="col-md text-wrap text-break"><%= education_exp.degree %>, <%= education_exp.course_of_study %>, <%= education_exp.form_education %></div>
                 <div class="col-md"><%= education_exp.currently_studying.present? ? t('interface.steps.education.form.currently_studying') : education_exp.graduation_year %></div>
               </div>
             </div>
@@ -97,7 +97,7 @@
         <div class="d-flex align-items-center justify-content-between mb-3">
           <div class="w-100">
             <div class="row">
-              <div class="col mb-1 text text-wrap text-break"><%= lang.lang_know %> - <%= lang.know_level %></div>
+              <div class="col mb-1 text text-wrap text-break"><%= lang.lang_know %> - <%= lang.level %></div>
             </div>
           </div>
           <%= render 'edit_language', language: lang %>

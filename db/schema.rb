@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_27_081614) do
+ActiveRecord::Schema.define(version: 2021_05_28_074119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,10 +91,10 @@ ActiveRecord::Schema.define(version: 2021_05_27_081614) do
 
   create_table "languages", force: :cascade do |t|
     t.string "lang_know"
-    t.string "know_level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "profile_id"
+    t.integer "level"
     t.index ["profile_id"], name: "index_languages_on_profile_id"
   end
 
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 2021_05_27_081614) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "profile_id"
+    t.integer "form_education"
     t.index ["profile_id"], name: "index_profile_educations_on_profile_id"
   end
 
