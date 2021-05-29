@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: '0bf7f3188a-32a73d@inbox.mailtrap.io'
+  default from: 'resume.znpp@gmail.com'
   layout 'mailer'
 end
