@@ -1,3 +1,5 @@
-<br>
-<p style="text-align: center;">Thanks for registering with Bullpen! We're glad you're here.<br>Please confirm your email address by clicking below.</p>
-<%= render partial: 'email/button', locals: { button_txt: 'Confirm Email', url: confirmation_url(@resource, confirmation_token: @token) } %>
+<p>Welcome <%= @email %>!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
