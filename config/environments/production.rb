@@ -128,14 +128,26 @@ Rails.application.configure do
 
   # Setup copy/pasted from https://heroku.mailtrap.io/inboxes/1136108/messages
   # Click on My Inbox, SMTP Settings, then select RoR from Integrations
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
+  #config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.smtp_settings = {
+  #  user_name: ENV['SMTP_USER_NAME'],
+  #  password: ENV['SMTP_PASSWORD'],
+  #  address: ENV['SMTP_ADDRESS'],
+  #  domain: ENV['SMTP_DOMAIN'],
+  #  port: ENV['SMTP_PORT'],
+  #  authentication: ENV['SMTP_AUTHENTICATION'].to_sym
+  # }
+
+  config.action_mailer.default_url_options = { :host => "https://resume-znpp.herokuapp.com"}
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    address: "smtp.sendgrid.net",
+    port: "25",
+    domain: "heroku.com",
     user_name: ENV['SMTP_USER_NAME'],
     password: ENV['SMTP_PASSWORD'],
-    address: ENV['SMTP_ADDRESS'],
-    domain: ENV['SMTP_DOMAIN'],
-    port: ENV['SMTP_PORT'],
-    authentication: ENV['SMTP_AUTHENTICATION'].to_sym
+    authentication: "plain",
+    enable_starttls_auto: true
   }
 
   # Allow mailer previews to occur on the staging server:
