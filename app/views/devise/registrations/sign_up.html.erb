@@ -70,24 +70,24 @@
         </div>
 
         <div class="mb-5 col-md-12 h4">
-          <%= f.label :email, class: "text-secondary" %><br />
+          <%= f.label t('interface.placeholder.email'), class: "text-secondary" %><br />
           <%= f.email_field :email, class: "form-control bg-white border-gray-dark", id: "email", required: true %>
         </div>
 
         <hr class="mb-4">
-        <button class="form-control-lg btn btn-outline-secondary col-md-12 mb-3 nextBtn-2" type="button">Sign up as a freelancer</button>
+        <button class="form-control-lg btn btn-outline-secondary col-md-12 mb-3 nextBtn-2" type="button"><%= t('interface.nav_bar.sign_up') %></button>
 
           <div class="text-center card-footer bg-white">
-            Already have an account? <%= link_to "Login", new_user_session_path, class: "p-2" %>
+            <%= t('interface.registration.message.already_have_account') %> <%= link_to t('interface.registration.login'), new_user_session_path, class: "p-2" %>
           </div>
       </div>
       <div class="row-cols-1 setup-content-2" id="step-2">
-        <div class="h1 mb-5 mt-4 display-5 text-secondary text-center">Create an Account</div>
+        <div class="h1 mb-5 mt-4 display-5 text-secondary text-center"><%= t('interface.create_account.title') %></div>
         <div class="current_email row-cols-1 text-center text-secondary"></div>
         <div class="row-cols-1 text-center mb-3 mb-4">
-          <a class="prevBtn-2 text-center text-muted" href="#">Change Email</a>
+          <a class="prevBtn-2 text-center text-muted" href="#"><%= t('interface.registration.change_email') %></a>
         </div>
-        <div class="row-cols-1 text-secondary">Password</div>
+        <div class="row-cols-1 text-secondary"><%= t('interface.create_account.password') %></div>
         <div class="input-group">
           <%=  f.password_field :password, id: "psw",  required: true  %>
           <span toggle="#psw" class="field-icon toggle-password"><i class="fas fa-fw fa-eye" aria-hidden="true"></i></span>
@@ -95,23 +95,23 @@
 
         <div id="message">
           <div class="row">
-            <div id="special" class="col-sm text-muted text-nowrap small">A <b>special</b> character </div>
-            <div id="number" class="col-sm text-muted text-nowrap small">A <b>number</b> </div>
+            <div id="special" class="col-sm text-muted text-nowrap small"><%= t('interface.create_account.validation.special') %></div>
+            <div id="number" class="col-sm text-muted text-nowrap small"><%= t('interface.create_account.validation.number') %></div>
           </div>
           <div class="row">
-            <div id="capital" class="col-sm text-muted text-nowrap small">A <b>capital (uppercase)</b> letter </div>
-            <div id="length" class="col-sm text-muted text-nowrap small">Minimum <b>8 characters</b></div>
+            <div id="capital" class="col-sm text-muted text-nowrap small"><%= t('interface.create_account.validation.capital') %></div>
+            <div id="length" class="col-sm text-muted text-nowrap small"><%= t('interface.create_account.validation.min') %></div>
           </div>
         </div>
 
-        <div class="text-secondary">Confirm Password</div>
+        <div class="text-secondary"><%= t('interface.registration.confirm_password') %></div>
         <div class="input-group mb-4">
           <%=  f.password_field :password_confirmation, id: "cPwdId", class: "myCpwdClass", required: true  %>
           <span toggle="#cPwdId" class="field-icon toggle-password"><i class="fas fa-fw fa-eye" aria-hidden="true"></i></span>
-          <div id="same_psw" class="col-sm text-muted text-nowrap small same_psw">Same as your password</div>
+          <div id="same_psw" class="col-sm text-muted text-nowrap small same_psw"><%= t('interface.registration.same_password') %></div>
         </div>
         <hr class="mb-4">
-        <%= f.submit "Create my account", class: "form-control-lg btn btn-outline-secondary col-md-12 mb-3", id: "submitBtn" %>
+        <%= f.submit t('interface.registration.create_account'), class: "form-control-lg btn btn-outline-secondary col-md-12 mb-3", id: "submitBtn" %>
       </div>
       <% end %>
     </div>

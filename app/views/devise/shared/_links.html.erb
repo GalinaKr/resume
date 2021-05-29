@@ -1,6 +1,6 @@
 <%- if controller_name != 'sessions' %>
   <div class="text-center text-muted text-grey-dark">
-    <h5><%= t('interface.registration.message.remember_password') %> <%= link_to "Login", new_session_path(resource_name) %></h5><br />
+    <h5><%= t('interface.registration.message.remember_password') %> <%= link_to t('interface.registration.login'), new_session_path(resource_name) %></h5><br />
     <%= t('interface.help') %> <%= mail_to('admin@support.com') %><br />
   </div>
 <% end %>

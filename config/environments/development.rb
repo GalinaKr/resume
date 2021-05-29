@@ -3,6 +3,8 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  host = 'localhost:3000'
+
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -71,8 +73,20 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # Uncomment if you wish to allow Action Cable access from any origin.
-  # config.action_cable.disable_request_forgery_protection = true
+  # Added because letter_opener gem said so
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # Needed for devise and mailers
+  config.action_mailer.preview_path = "#{Rails.root}/test/mailers/previews"
+  config.action_mailer.asset_host = "http://#{host}"
+  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.delivery_method = :letter_opener_web
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_caching = false
+
+  ENV['DOMAIN_URL'] = host
+
+  ENV['GOOGLE_SIGN_IN_CLIENT_ID'] = '797101803769-896boo15p0nt5e7bhb6agb7ip47st2qi.apps.googleusercontent.com'
+  ENV['GOOGLE_SIGN_IN_CLIENT_SECRET'] = 'ECcmWxjcS1wHsRhw0KfaD5M9'
 end

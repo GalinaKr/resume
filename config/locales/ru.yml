@@ -47,12 +47,37 @@ ru:
       password: 'Пароль'
       sign_up_with_email: "Зарегистрируйтесь с Email"
       sign_up_with_gemail: "Зарегистрируйтесь с Gmail"
+      sign_up: 'Зарегистрируйтесь'
+      or: 'или'
+      reset_password:
+        click_link: 'Щелкните ссылку в папке "Входящие", чтобы сбросить пароль.'
+        resend: 'Отправить электронное письмо повторно'
+        title: 'Ссылка для сброса пароля отправлена'
+        reset_password: 'Сбросить пароль'
+        message:
+          l1: 'Введите адрес электронной почты, связанный с вашей учетной записью Resume.'
+          l2: 'Мы отправим вам ссылку для сброса пароля по электронной почте.'
+        placeholder:
+          email: 'адрес электронной почты'
+        send_reset: 'Отправить сброс пароля'
+        change_password_form:
+          title: 'Изменить пароль'
+          new_password: 'Новый пароль'
+          confirm: 'Подтвердите новый пароль'
+          button: 'Изменить пароль'
+          min: 'символов минимум'
+      change_email: 'Изменить Email'
+      confirm_password: 'Подтвердите пароль'
+      same_password: 'Такой же, как ваш пароль'
+      create_account: 'Создать мой аккаунт'
+      login: 'Авторизоваться'
       log_in: 'Авторизоваться'
       login_gmail: 'Авторизоваться с Gmail'
       message:
         remember_password: 'Забыли свой пароль?'
         locked: "Не получили инструкции по разблокировке?"
         have_account: 'У вас есть аккаунт?'
+        already_have_account: 'Уже есть аккаунт?'
     placeholder:
       email: 'Email'
     create_account:

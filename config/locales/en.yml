@@ -48,11 +48,36 @@ en:
       sign_up_with_email: "Sign Up with Email"
       sign_up_with_gemail: "Sign Up with Gmail"
       log_in: 'Log In'
+      login: 'Login'
       login_gmail: 'Log In with Gmail'
+      sign_up: 'Sign up'
+      or: 'or'
+      reset_password:
+        click_link: 'Click the link in your inbox to reset your password'
+        resend: 'Re-send Email'
+        title: 'Password Reset Link Sent'
+        reset_password : 'Reset your password'
+        message:
+          l1: 'Enter the email address associated with your Resume account.'
+          l2: 'We`ll email you a link to reset your password.'
+        placeholder:
+          email: 'Email address'
+        send_reset: 'Send Password Reset'
+        change_password_form:
+          title: 'Change Your Password'
+          new_password: 'New password'
+          confirm: 'Confirm new password'
+          button: 'Change my password'
+          min: 'characters minimum'
+      change_email: 'Change Email'
+      confirm_password: 'Confirm Password'
+      same_password: 'Same as your password'
+      create_account: 'Create my account'
       message:
         remember_password: 'Remember your password?'
         locked: "Didn't receive unlock instructions?"
         have_account: 'Have an account?'
+        already_have_account: 'Already have an account?'
     placeholder:
       email: 'Email'
     create_account:

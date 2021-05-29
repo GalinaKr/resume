@@ -1,21 +1,21 @@
 <div class="row justify-content-center log-in-container p-3 p-sm-0">
 
   <div class="card col-md-5 shadow-sm align-items-center">
-    <div class="h1 mt-4 text-secondary text-center">Reset your password</div>
+    <div class="h1 mt-4 text-secondary text-center"><%= t('interface.registration.reset_password.reset_password') %></div>
     <div class="col-md-10 px-4 py-4">
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= render 'devise/shared/error_messages' %>
         <h6 class="text-muted text-center mb-3">
-          Enter the email address associated with your Bullpen account.
-          We'll email you a link to reset your password.
+          <%= t('interface.registration.reset_password.message.l1') %>
+          <%= t('interface.registration.reset_password.message.l2') %>
         </h6>
         <div class="field">
-          <%= f.label :email, class: 'text-primary text-left' %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control center mb-5', placeholder: "Email address" %>
+          <%= f.label t('interface.placeholder.email'), class: 'text-primary text-left' %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control center mb-5', placeholder: t('interface.registration.reset_password.placeholder.email') %>
         </div>
 
         <div class="actions text-center">
-          <%= f.submit "Send Password Reset", class: 'form-control-lg btn btn-outline-secondary col-md-12'%>
+          <%= f.submit t('interface.registration.reset_password.send_reset'), class: 'form-control-lg btn btn-outline-secondary col-md-12'%>
         </div>
       <% end %>
     </div>

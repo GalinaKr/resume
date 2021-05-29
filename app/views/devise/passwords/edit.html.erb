@@ -1,7 +1,7 @@
 <div class="row justify-content-center log-in-container  p-3 p-sm-0">
 
   <div class="card col-md-5 shadow-sm align-items-center">
-    <div class="h1 mt-4 text-secondary text-center">Change Your Password</div>
+    <div class="h1 mt-4 text-secondary text-center"><%= t('interface.registration.reset_password.change_password_form.title') %></div>
     <div class="col-md-10 px-4 py-4">
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
         <%= render 'devise/shared/error_messages' %>
@@ -11,17 +11,17 @@
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em><br />
           <% end %>
-          <%= f.label :password_confirmation, "New password" %><br />
+          <%= f.label :password_confirmation, t('interface.registration.reset_password.change_password_form.new_password') %><br />
           <%= f.password_field :password, autofocus: true, autocomplete: "current-password", class: 'form-control bg-white border-gray-dark', id: "user_password" %>
         </div>
 
         <div class="field mb-3">
-          <%= f.label :password_confirmation, "Confirm new password" %><br />
+          <%= f.label :password_confirmation, t('interface.registration.reset_password.change_password_form.confirm') %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control bg-white border-gray-dark' %>
         </div>
 
         <div class="actions">
-          <%= f.submit "Change my password", class: "btn btn-primary col-md-12" %>
+          <%= f.submit t('interface.registration.reset_password.change_password_form.button'), class: "btn btn-primary col-md-12" %>
         </div>
       <% end %>
     </div>

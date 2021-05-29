@@ -15,7 +15,7 @@
         </div>
       <% end %>
 
-      <div class="bp-or-border my-3"><span>or</span></div>
+      <div class="bp-or-border my-3"><span><%= t('interface.registration.or') %></span></div>
 
       <%= google_sign_in_button(image_pack_tag('media/images/icons8-google-48.png', size: '24x24', class: 'mr-2') + I18n.t('interface.registration.sign_up_with_gemail'), proceed_to: user_google_omniauth_callback_path(src: 'registrations#new'), class: "btn btn-outline-primary btn-block d-flex justify-content-center mb-3") %>
 
