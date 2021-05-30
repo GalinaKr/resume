@@ -18,25 +18,28 @@ Rails.application.configure do
   #  authentication: ENV['SMTP_AUTHENTICATION'].to_sym
   #}
   #
-  config.action_mailer.default_url_options = { :host => "https://staging-resume-znpp.herokuapp.com"}
-    ActionMailer::Base.delivery_method = :smtp
-    ActionMailer::Base.smtp_settings = {
-    address: "smtp.mailgun.org",
-    port: "25",
-    domain: "heroku.com",
-    user_name: ENV['SMTP_USER_NAME'],
-    password: ENV['SMTP_PASSWORD'],
-    authentication: "plain",
-     enable_starttls_auto: true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_options = { from: 'resume.znpp@gmail.com' }
+  config.action_mailer.default_url_options = { :host => 'staging-resume-znpp.herokuapp.com' }
+  config.action_mailer.smtp_settings = {
+    :address        => 'smtp.gmail.com',
+    :domain         => 'gmail.com',
+    :port           => 587,
+    :user_name      => ENV['SMTP_ADDRESS'],
+    :password       => ENV['SMTP_PASSWORD'],
+    :authentication => :plain,
+    :enable_starttls_auto => true
   }
+  config.action_mailer.raise_delivery_errors = true
 
   # Allow mailer previews to occur on the staging server:
   # https://stackoverflow.com/questions/27453578/rails-4-email-preview-in-production
-  config.action_mailer.show_previews = true
+  #config.action_mailer.show_previews = true
 
-  config.action_mailer.asset_host = "https://#{host}"
-  config.action_mailer.default_url_options = { host: host }
-  config.action_mailer.default_url_options = { protocol: 'https', host: ENV['DOMAIN_URL'] }
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.perform_caching = true
+  #config.action_mailer.asset_host = "https://#{host}"
+  #config.action_mailer.default_url_options = { host: host }
+  #config.action_mailer.default_url_options = { protocol: 'https', host: ENV['DOMAIN_URL'] }
+  #config.action_mailer.raise_delivery_errors = true
+  #config.action_mailer.perform_caching = true
 end
