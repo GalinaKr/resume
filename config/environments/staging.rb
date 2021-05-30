@@ -24,7 +24,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'staging-resume-znpp.herokuapp.com' }
   config.action_mailer.smtp_settings = {
     :address        => 'smtp.gmail.com',
-    :domain         => 'gmail.com',
+    :domain         => 'heroku.com',
     :port           => 587,
     :user_name      => ENV['SMTP_ADDRESS'],
     :password       => ENV['SMTP_PASSWORD'],
