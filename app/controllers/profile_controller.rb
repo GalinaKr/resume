@@ -9,6 +9,9 @@ class ProfileController < ApplicationController
   def show
     certifications
     degree_of_kinships
+    form_of_educations
+    degrees
+    language_levels
 
     @profile = Profile.lookup(params[:slug])
   end

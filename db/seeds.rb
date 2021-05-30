@@ -35,3 +35,47 @@ if DegreeOfKinship.none?
                            { description_en: 'Guardian', description_ru: 'Опекун', description_ua: 'Опікун' }
                          ])
 end
+
+if Degree.none?
+  Degree.create([
+                           { description_en: 'Bachelor of Science', description_ru: 'Бакалавр', description_ua: 'Бакалавр'},
+                           { description_en: 'Bachelor of Arts', description_ru: 'Младший бакалавр', description_ua: 'Молодший бакалавр' },
+                           { description_en: 'Masters', description_ru: 'Магистр', description_ua: 'Магістр' },
+                           { description_en: 'Doctor of Philosophy', description_ru: 'Доктор философии', description_ua: 'Доктор філософії' },
+                           { description_en: 'Doctor of Arts', description_ru: 'Доктор искусств', description_ua: 'Доктор мистецтва' },
+                           { description_en: 'Doctor of Science', description_ru: 'Доктор наук', description_ua: 'Доктор наук' },
+                           { description_en: 'Incomplete higher education', description_ru: 'Неполное высшее', description_ua: 'Неповна вища' },
+                           { description_en: 'Incomplete secondary education', description_ru: 'Неполное среднее', description_ua: 'Неповна середня' },
+                           { description_en: 'Elementary', description_ru: 'Начальное', description_ua: 'Початкова' },
+                           { description_en: 'Vocational education', description_ru: 'Средне-специальное', description_ua: 'Середня-спеціальна' },
+                           { description_en: 'Specialist', description_ru: 'Специалист', description_ua: 'Спеціаліст' },
+                           { description_en: 'Courses', description_ru: 'Курсы', description_ua: 'Курси' }
+                         ])
+end
+
+if FormOfEducation.none?
+  FormOfEducation.create([
+                  { description_en: 'On-the-job', description_ru: 'Без отрыва от производства', description_ua: 'Без відриву від виробництва'},
+                  { description_en: 'Out of production', description_ru: 'С отрывом от производства', description_ua: 'З відривом від виробництва' },
+                  { description_en: 'Evening', description_ru: 'Вечернее', description_ua: 'Вечірня' },
+                  { description_en: 'Daytime', description_ru: 'Дневная', description_ua: 'Денна' },
+                  { description_en: 'Daytime for order from ZNPP', description_ru: 'Дневная по заказу ЗАЭС', description_ua: 'Денна по замовленню від ЗАЕС' },
+                  { description_en: 'Remote', description_ru: 'Дистанционная', description_ua: 'Дестанційна' },
+                  { description_en: 'Externally', description_ru: 'Экстерном', description_ua: 'Екстерном' },
+                  { description_en: 'Extramural', description_ru: 'Заочная', description_ua: 'Заочна' },
+                  { description_en: 'Part-time', description_ru: 'Очно-заочная', description_ua: 'Очно-заочна' },
+                  { description_en: 'Retraining', description_ru: 'Переподготовка', description_ua: 'Перепідготовка' }
+                ])
+end
+
+if LanguageLevel.none?
+  LanguageLevel.create([
+                         { description_en: 'Native', description_ru: 'Родной', description_ua: 'Рідний' },
+                         { description_en: 'A1 (Beginner)', description_ru: 'A1 (Начальный)', description_ua: 'A1 (Початковий)' },
+                         { description_en: 'A2 (Elementary)', description_ru: 'A2 (Элементарный)', description_ua: 'A2 (Елементарний)' },
+                         { description_en: 'B1 (Intermediate)', description_ru: 'B1 (Средний)', description_ua: 'B1 (Середній)' },
+                         { description_en: 'B2 (Upper-Intermediate)', description_ru: 'B2 (Выше среднего)', description_ua: 'B2 (Вище середнього)' },
+                         { description_en: 'C1 (Advanced)', description_ru: 'C1 (Продвинутый)', description_ua: 'C1 (Просунутий)' },
+                         { description_en: 'C2 (Proficiency)', description_ru: 'C2 (Отличное знание)', description_ua: 'C2 (Відмінне володіння)' }
+                       ])
+end

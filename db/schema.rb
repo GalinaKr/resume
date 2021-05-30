@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_27_081614) do
+ActiveRecord::Schema.define(version: 2021_05_28_114435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,14 @@ ActiveRecord::Schema.define(version: 2021_05_27_081614) do
     t.string "description_ua"
   end
 
+  create_table "degrees", force: :cascade do |t|
+    t.string "description_en"
+    t.string "description_ru"
+    t.string "description_ua"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "families", force: :cascade do |t|
     t.string "f_first_name"
     t.string "f_second_name"
@@ -89,12 +97,29 @@ ActiveRecord::Schema.define(version: 2021_05_27_081614) do
     t.index ["user_id"], name: "index_families_on_user_id"
   end
 
+  create_table "form_of_educations", force: :cascade do |t|
+    t.string "description_en"
+    t.string "description_ru"
+    t.string "description_ua"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "language_levels", force: :cascade do |t|
+    t.string "description_en"
+    t.string "description_ru"
+    t.string "description_ua"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "languages", force: :cascade do |t|
     t.string "lang_know"
-    t.string "know_level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "profile_id"
+    t.bigint "language_level_id"
+    t.index ["language_level_id"], name: "index_languages_on_language_level_id"
     t.index ["profile_id"], name: "index_languages_on_profile_id"
   end
 
@@ -111,7 +136,6 @@ ActiveRecord::Schema.define(version: 2021_05_27_081614) do
 
   create_table "profile_educations", force: :cascade do |t|
     t.string "institution"
-    t.integer "degree"
     t.string "course_of_study"
     t.integer "graduation_year"
     t.boolean "currently_studying", default: false
@@ -119,6 +143,10 @@ ActiveRecord::Schema.define(version: 2021_05_27_081614) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "profile_id"
+    t.bigint "form_of_education_id"
+    t.bigint "degree_id"
+    t.index ["degree_id"], name: "index_profile_educations_on_degree_id"
+    t.index ["form_of_education_id"], name: "index_profile_educations_on_form_of_education_id"
     t.index ["profile_id"], name: "index_profile_educations_on_profile_id"
   end
 
@@ -186,7 +214,10 @@ ActiveRecord::Schema.define(version: 2021_05_27_081614) do
   add_foreign_key "families", "degree_of_kinships"
   add_foreign_key "families", "profiles"
   add_foreign_key "families", "users"
+  add_foreign_key "languages", "language_levels"
   add_foreign_key "languages", "profiles"
+  add_foreign_key "profile_educations", "degrees"
+  add_foreign_key "profile_educations", "form_of_educations"
   add_foreign_key "profile_educations", "profiles"
   add_foreign_key "profiles", "users"
 end

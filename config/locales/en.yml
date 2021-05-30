@@ -102,6 +102,17 @@ en:
           currently_studying: "Currently Studying"
           date_earned: "Date Earned"
           description: 'Description'
+        form_education:
+          on_the_job: 'On-the-job'
+          out_of_production: 'Out of production'
+          evening: 'Evening'
+          daytime: 'Daytime'
+          daytime_for_order: 'Daytime for order from ZNPP'
+          remote: 'Remote'
+          externally: 'Externally'
+          extramural: 'Extramural'
+          part_time: 'Part-time'
+          retraining: 'Retraining'
         placeholder:
           school: 'Enter the school you attended'
           degree_programm: "Enter your degree program"
@@ -138,6 +149,9 @@ en:
           edit_title: 'Edit Language'
           name: 'Language'
           level: 'Level of Knowledge'
+        placeholder:
+          name: 'Input language'
+          level: 'Select level'
       work_education:
         title: 'Work experience and education'
         placeholder: 'Tell us about your work experience and educational background.'
