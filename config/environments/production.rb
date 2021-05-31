@@ -138,9 +138,12 @@ Rails.application.configure do
   #  authentication: ENV['SMTP_AUTHENTICATION'].to_sym
   # }
 
-  config.action_mailer.default_url_options = { :host => 'staging-resume-znpp.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'herokuapp.com',
+    user_name:            'resume.znpp@gmail.com',
+    password:             '!1Qwerty',
+    authentication:       'plain' }
 end
