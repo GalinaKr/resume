@@ -6,7 +6,6 @@
 
 # Ignore bundler config.
 /.bundle
-/storage_resume
 
 # Ignore all logfiles and tempfiles.
 /log/*

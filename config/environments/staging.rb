@@ -12,6 +12,5 @@ Rails.application.configure do
     domain:               'herokuapp.com',
     user_name:            'resume.znpp@gmail.com',
     password:             '!1Qwerty',
-    authentication:       'plain',
-    enable_starttls_auto: true }
+    authentication:       'plain' }
 end

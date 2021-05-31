@@ -1,12 +1,13 @@
 class UserResume
   include Prawn::View
 
-  def initialize
+  def initialize(user)
+    @user = user
     content
   end
 
   def content
-    text "Hello World!"
+    text @user.full_name
 
     render
   end

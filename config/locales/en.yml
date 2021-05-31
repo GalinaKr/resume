@@ -195,3 +195,7 @@ en:
     phone_number: "Phone Number"
     email: "Email"
     location: "Location"
+  mailer:
+    send_resume:
+      title: 'User send Resume'
+      body: 'PDF with resume in attachment'
