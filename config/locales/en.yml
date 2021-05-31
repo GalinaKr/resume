@@ -31,8 +31,8 @@
 
 en:
   interface:
-    title: 'Log In to Resume'
-    hello: "Sign Up for Resume"
+    title: 'Log In to UserResume'
+    hello: "Sign Up for UserResume"
     help: "For help contact us at"
     nav_bar:
       log_out: 'Log Out'
@@ -187,6 +187,7 @@ en:
     add_new: "Add New"
     submit: "Submit Application"
     create: 'Create Account'
+    download: 'Download'
   user:
     first_name: "First Name"
     second_name: "Second Name"

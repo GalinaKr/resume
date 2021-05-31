@@ -18,7 +18,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :families
-  resources :profiles
+  resources :profiles do
+    get 'download_pdf', to: 'profile#download_pdf'
+  end
 
   post 'change_family', to: 'profile#change_family'
   post 'add_family', to: 'profile#change_family'

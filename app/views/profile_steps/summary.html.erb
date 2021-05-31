@@ -3,9 +3,9 @@
 <div class="container mb-5">
   <%= render partial: 'shared/notice_and_alert' %>
   <div class="mt-4">
-      <div class="h1">
-        <%= t('interface.steps.summary.title') %>
-      </div>
+    <div class="h1">
+      <%= t('interface.steps.summary.title') %>
+    </div>
   </div>
   <div class="container bp-card">
     <%= render partial: 'shared/summary' %>
@@ -15,13 +15,12 @@
       <p><%= @profile.user.email %></p>
     </div>
     <div class="mt-4">
-      <div class="d-flex">
-          <div class="ml-auto">
-            <%= form_for @profile, url: wizard_path, method: :put do |f| %>
-              <%= f.submit t('button.submit'), class: 'btn btn-primary d-none d-sm-block' %>
-              <%= f.submit 'Submit', class: 'btn btn-primary d-sm-none' %>
-            <% end %>
-          </div>
+      <div class="d-flex justify-content-between">
+        <%= link_to 'Download', profile_download_pdf_path(@profile), class: "btn btn-primary", id: "NextBtn" %>
+        <%= form_for @profile, url: wizard_path, method: :put do |f| %>
+          <%= f.submit t('button.submit'), class: 'btn btn-primary d-none d-sm-block' %>
+          <%= f.submit 'Submit', class: 'btn btn-primary d-sm-none' %>
+        <% end %>
       </div>
     </div>
   </div>

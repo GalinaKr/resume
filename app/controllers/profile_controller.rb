@@ -18,6 +18,7 @@ class ProfileController < ApplicationController
 
   def index
     profile
+    download_pdf
   end
 
   def change_family
@@ -42,6 +43,13 @@ class ProfileController < ApplicationController
     else
       redirect_after_change_profile
     end
+  end
+
+  def download_pdf
+    output = UserResume.new.content
+    send_data output,
+              :type => 'application/pdf',
+              :filename => "resume_#{current_user.full_name}.pdf"
   end
 
   def change_education

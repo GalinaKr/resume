@@ -1,7 +1,6 @@
 require_relative "boot"
 
 require "rails/all"
-require "prawn"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -11,6 +10,7 @@ module Resume
   class Application < Rails::Application
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths << Rails.root.join('lib', 'migrations')
+    config.autoload_paths << "#{Rails.root}/app/resume"
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1

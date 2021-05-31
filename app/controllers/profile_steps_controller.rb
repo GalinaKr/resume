@@ -27,6 +27,8 @@ class ProfileStepsController < ApplicationController
   end
 
   def finish_wizard_path
+    send_resume_pdf
+
     reset_session
     root_path
     #render_wizard @user
@@ -77,6 +79,17 @@ class ProfileStepsController < ApplicationController
   end
 
   private
+
+  def send_resume_pdf
+    recipient = 'support@gmail.com'
+    output = UserResume.new.content
+    filename = Time.zone.now.strftime("resume_#{@user.full_name}_%d-%m-%Y.pdf")
+    user = @user.id
+    File.open(Rails.root.join('storage_resume', filename), 'wb') do |f|
+      f.write(output)
+    end
+    ResumeMailer.send_resume(output, recipient, user).deliver
+  end
 
   def set_user
     @user ||= current_user
