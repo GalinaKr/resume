@@ -85,9 +85,9 @@ class ProfileStepsController < ApplicationController
     output = UserResume.new.content
     filename = Time.zone.now.strftime("resume_#{@user.full_name}_%d-%m-%Y.pdf")
     user = @user.id
-    File.open(Rails.root.join('storage_resume', filename), 'wb') do |f|
-      f.write(output)
-    end
+    #File.open(Rails.root.join('storage_resume', filename), 'wb') do |f|
+    #  f.write(output)
+    #end
     ResumeMailer.send_resume(output, recipient, user).deliver
   end
 
