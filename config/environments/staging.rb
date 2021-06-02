@@ -4,7 +4,7 @@ require File.expand_path('../production.rb', __FILE__)
 Rails.application.configure do
 
   host = ENV['DOMAIN_URL']
-  
+
   # Here override any defaults
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {

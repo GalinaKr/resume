@@ -46,8 +46,17 @@
                                          PATCH    /profiles/:id(.:format)                                                                           profiles#update
                                          PUT      /profiles/:id(.:format)                                                                           profiles#update
                                          DELETE   /profiles/:id(.:format)                                                                           profiles#destroy
+                           change_family POST     /change_family(.:format)                                                                          profile#change_family
                               add_family POST     /add_family(.:format)                                                                             profile#change_family
                        change_basic_info POST     /change_basic_info(.:format)                                                                      profile#change_basic_info
+                        change_education POST     /change_education(.:format)                                                                       profile#change_education
+                          add_educations POST     /add_educations(.:format)                                                                         profile#change_education
+                  change_work_experience POST     /change_work_experience(.:format)                                                                 profile#change_work_experience
+                     add_work_experience POST     /add_work_experience(.:format)                                                                    profile#change_work_experience
+                         change_language POST     /change_language(.:format)                                                                        profile#change_language
+                            add_language POST     /add_language(.:format)                                                                           profile#change_language
+                    change_certification POST     /change_certification(.:format)                                                                   profile#change_certification
+                       add_certification POST     /add_certification(.:format)                                                                      profile#change_certification
                                   avatar PATCH    /avatar/:id(.:format)                                                                             avatar#update
                                          PUT      /avatar/:id(.:format)                                                                             avatar#update
                                          DELETE   /avatar/:id(.:format)                                                                             avatar#destroy
